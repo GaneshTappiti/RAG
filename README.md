@@ -1,6 +1,8 @@
-# My LangChain RAG Tutorial
+# RAG System with LangChain
 
-A Retrieval Augmented Generation (RAG) tutorial using LangChain, ChromaDB, and OpenAI embeddings. This project demonstrates how to create a question-answering system over documents.
+A Retrieval Augmented Generation (RAG) system using LangChain, ChromaDB, and OpenAI embeddings. This project demonstrates how to create a question-answering system over documents.
+
+Created by **Ganesh Tappiti**
 
 ## Features
 
@@ -22,27 +24,31 @@ A Retrieval Augmented Generation (RAG) tutorial using LangChain, ChromaDB, and O
 ### For Windows Users
 
 1. **Install Microsoft Visual C++ Build Tools** (if not already installed)
-   - Follow the guide [here](https://wiki.python.org/moin/WindowsCompilers)
+   - Follow the [Windows Compilers guide](https://wiki.python.org/moin/WindowsCompilers)
    - Set the environment variable path as instructed
 
 2. **Clone this repository**
+
    ```bash
-   git clone <your-repo-url>
-   cd my-langchain-rag-tutorial
+   git clone https://github.com/GaneshTappiti/RAG.git
+   cd RAG
    ```
 
 3. **Create and activate virtual environment**
+
    ```bash
    python -m venv venv
    .\venv\Scripts\Activate.ps1
    ```
 
 4. **Install onnxruntime first** (Windows requirement)
+
    ```bash
    pip install onnxruntime
    ```
 
 5. **Install dependencies**
+
    ```bash
    pip install -r requirements.txt
    pip install "unstructured[md]"
@@ -51,23 +57,27 @@ A Retrieval Augmented Generation (RAG) tutorial using LangChain, ChromaDB, and O
 ### For macOS Users
 
 1. **Clone this repository**
+
    ```bash
-   git clone <your-repo-url>
-   cd my-langchain-rag-tutorial
+   git clone https://github.com/GaneshTappiti/RAG.git
+   cd RAG
    ```
 
 2. **Create and activate virtual environment**
+
    ```bash
    python -m venv venv
    source venv/bin/activate
    ```
 
 3. **Install onnxruntime via conda** (recommended)
+
    ```bash
    conda install onnxruntime -c conda-forge
    ```
 
 4. **Install dependencies**
+
    ```bash
    pip install -r requirements.txt
    pip install "unstructured[md]"
@@ -76,21 +86,23 @@ A Retrieval Augmented Generation (RAG) tutorial using LangChain, ChromaDB, and O
 ## Configuration
 
 1. **Set up OpenAI API Key**
-   
+
    Create a `.env` file in the project root:
+
    ```env
    OPENAI_API_KEY=your_openai_api_key_here
    ```
-   
-   Get your API key from: https://platform.openai.com/api-keys
+
+   Get your API key from: <https://platform.openai.com/api-keys>
 
 ## Usage
 
 1. **Create the database**
+
    ```bash
    python create_database.py
    ```
-   
+
    This will:
    - Load documents from the `data/books/` directory
    - Split text into chunks
@@ -98,19 +110,21 @@ A Retrieval Augmented Generation (RAG) tutorial using LangChain, ChromaDB, and O
    - Store vectors in ChromaDB
 
 2. **Query the database**
+
    ```bash
    python query_data.py "How does Alice meet the Mad Hatter?"
    ```
 
 3. **Compare embeddings**
+
    ```bash
    python compare_embeddings.py
    ```
 
 ## Project Structure
 
-```
-my-langchain-rag-tutorial/
+```text
+RAG/
 ├── venv/                    # Virtual environment
 ├── .env                     # Environment variables (create this)
 ├── requirements.txt         # Python dependencies
@@ -138,21 +152,24 @@ my-langchain-rag-tutorial/
 ## Troubleshooting
 
 ### Python 3.13 Compatibility
+
 This project has been updated to work with Python 3.13. The requirements.txt uses flexible version constraints (>=) instead of exact versions to ensure compatibility.
 
 ### Windows Installation Issues
+
 - Ensure Microsoft Visual C++ Build Tools are installed
 - Install onnxruntime before other dependencies
 - Use PowerShell with execution policy that allows script execution
 
 ### macOS Installation Issues
+
 - Use conda to install onnxruntime: `conda install onnxruntime -c conda-forge`
 - Ensure Xcode command line tools are installed: `xcode-select --install`
 
-## Tutorial Video
+## About This Project
 
-Based on the tutorial: [RAG+Langchain Python Project: Easy AI/Chat For Your Docs](https://www.youtube.com/watch?v=tcqEUSNCn8I)
+This RAG (Retrieval Augmented Generation) system was developed by **Ganesh Tappiti** to demonstrate practical implementation of question-answering over documents using modern AI technologies.
 
 ## License
 
-This project is for educational purposes. Please refer to the original repository for licensing information.
+This project is developed and maintained by **Ganesh Tappiti**. Feel free to use it for educational and personal purposes.

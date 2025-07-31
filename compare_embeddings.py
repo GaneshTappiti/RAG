@@ -1,5 +1,11 @@
+"""
+RAG System Embedding Comparison
+Author: Ganesh Tappiti
+Description: Compares different embedding approaches for the RAG system
+"""
+
 from langchain_openai import OpenAIEmbeddings
-from langchain.evaluation import load_evaluator
+import numpy as np
 from dotenv import load_dotenv
 import openai
 import os
@@ -14,15 +20,23 @@ openai.api_key = os.environ['OPENAI_API_KEY']
 def main():
     # Get embedding for a word.
     embedding_function = OpenAIEmbeddings()
-    vector = embedding_function.embed_query("apple")
-    print(f"Vector for 'apple': {vector}")
-    print(f"Vector length: {len(vector)}")
+    vector1 = embedding_function.embed_query("apple")
+    vector2 = embedding_function.embed_query("iphone")
+    
+    print(f"Vector for 'apple': {vector1[:5]}...")  # Show first 5 elements
+    print(f"Vector length: {len(vector1)}")
 
-    # Compare vector of two words
-    evaluator = load_evaluator("pairwise_embedding_distance")
-    words = ("apple", "iphone")
-    x = evaluator.evaluate_string_pairs(prediction=words[0], prediction_b=words[1])
-    print(f"Comparing ({words[0]}, {words[1]}): {x}")
+    # Calculate cosine similarity between the two vectors
+    import numpy as np
+    
+    def cosine_similarity(v1, v2):
+        dot_product = np.dot(v1, v2)
+        magnitude1 = np.linalg.norm(v1)
+        magnitude2 = np.linalg.norm(v2)
+        return dot_product / (magnitude1 * magnitude2)
+    
+    similarity = cosine_similarity(vector1, vector2)
+    print(f"Comparing ('apple', 'iphone') - Cosine similarity: {similarity:.4f}")
 
 
 if __name__ == "__main__":
