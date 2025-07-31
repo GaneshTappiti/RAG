@@ -1,4 +1,5 @@
 python-dotenv==1.0.1 # For reading environment variables stored in .env file
+flask>=2.0.0 # Web framework for the application
 langchain>=0.2.2
 langchain-community>=0.2.3
 langchain-google-genai>=1.0.0 # For Google Gemini integration
@@ -19,4 +20,4 @@ pyyaml>=6.0 # YAML configuration file support
 streamlit>=1.28.0 # Web interface
 # argparse is built-in, no need to install
 
-# install markdown dependencies with: `pip install "unstructured[md]"` after install the requirements file. Leave this line commented out. 
+# install markdown dependencies with: `pip install "unstructured[md]"` after install the requirements file. Leave this line commented out.

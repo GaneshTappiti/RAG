@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+
+name: ai-prompt-generator
+metadata:
+  template: ai-prompt-generator@0.0.1-beta
+services:
+  web:
+    project: .
+    language: python
+    host: appservice
+hooks:
+  preprovision:
+    shell: sh
+    run: echo "Preparing to provision Azure resources..."
+  postprovision:
+    shell: sh
+    run: echo "Provisioning completed."

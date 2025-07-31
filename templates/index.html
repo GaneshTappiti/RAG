@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tool Prompt Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .form-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .tool-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .tool-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .tool-card.selected {
+            border-color: #667eea;
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body class="min-h-screen gradient-bg">
+    <div class="container mx-auto px-4 py-8">
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-white mb-4">🎨 AI Tool Prompt Generator</h1>
+            <p class="text-xl text-white opacity-90">Generate UI/UX design prompts tailored for your favorite AI development tools</p>
+        </div>
+
+        <div class="max-w-4xl mx-auto form-container rounded-lg shadow-2xl p-8">
+            <form id="promptForm" class="space-y-6">
+                <!-- Tool Selection -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4">🛠️ Select Your AI Tool</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        {% for tool in tools %}
+                        <div class="tool-card border-2 border-gray-200 rounded-lg p-4 text-center" data-tool="{{ tool.value }}">
+                            <div class="text-2xl mb-2">
+                                {% if tool.value == 'lovable' %}💜
+                                {% elif tool.value == 'bolt' %}⚡
+                                {% elif tool.value == 'v0' %}🚀
+                                {% elif tool.value == 'cursor' %}🎯
+                                {% elif tool.value == 'framer' %}🎨
+                                {% elif tool.value == 'bubble' %}🫧
+                                {% elif tool.value == 'flutterflow' %}🦋
+                                {% elif tool.value == 'uizard' %}🎯
+                                {% else %}🤖
+                                {% endif %}
+                            </div>
+                            <div class="text-sm font-medium text-gray-700">{{ tool.name }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <input type="hidden" id="selected_tool" name="selected_tool" value="lovable">
+                </div>
+
+                <!-- Project Details -->
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="app_name" class="block text-sm font-medium text-gray-700 mb-2">📱 App Name *</label>
+                        <input type="text" id="app_name" name="app_name" required 
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                               placeholder="Enter your app name">
+                    </div>
+                    <div>
+                        <label for="platform" class="block text-sm font-medium text-gray-700 mb-2">💻 Platform</label>
+                        <select id="platform" name="platform" 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="Web">Web Application</option>
+                            <option value="Mobile">Mobile Application</option>
+                            <option value="Desktop">Desktop Application</option>
+                            <option value="Cross-platform">Cross-platform</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="design_style" class="block text-sm font-medium text-gray-700 mb-2">🎨 Design Style</label>
+                        <select id="design_style" name="design_style" 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="Minimal">Minimal & Clean</option>
+                            <option value="Fun">Fun & Colorful</option>
+                            <option value="Business">Professional & Business</option>
+                            <option value="Dark">Dark Mode</option>
+                            <option value="Modern">Modern & Trendy</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="target_users" class="block text-sm font-medium text-gray-700 mb-2">👥 Target Users</label>
+                        <input type="text" id="target_users" name="target_users" 
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                               placeholder="e.g., Young professionals, Students">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="style_description" class="block text-sm font-medium text-gray-700 mb-2">✨ Style Description (Optional)</label>
+                    <textarea id="style_description" name="style_description" rows="3" 
+                              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                              placeholder="Describe any specific design preferences, color schemes, or visual elements"></textarea>
+                </div>
+
+                <div>
+                    <label for="app_idea" class="block text-sm font-medium text-gray-700 mb-2">💡 App Idea in Detail *</label>
+                    <textarea id="app_idea" name="app_idea" rows="5" required 
+                              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                              placeholder="Describe your app idea in detail. What problem does it solve? What are the main features? How should users interact with it?"></textarea>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" id="generateBtn" 
+                            class="bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold py-4 px-8 rounded-lg hover:from-blue-600 hover:to-purple-700 transition duration-300 transform hover:scale-105 shadow-lg">
+                        🎯 Generate UI/UX Prompt
+                    </button>
+                </div>
+            </form>
+
+            <!-- Loading State -->
+            <div id="loading" class="hidden text-center py-8">
+                <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
+                <p class="mt-4 text-gray-600">Generating your customized prompt...</p>
+            </div>
+
+            <!-- Results -->
+            <div id="results" class="hidden mt-8">
+                <h3 class="text-xl font-bold text-gray-800 mb-4">🎉 Your Generated Prompt</h3>
+                <div class="bg-gray-50 border rounded-lg p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-sm text-gray-600">Generated for: <span id="result-tool" class="font-semibold"></span></span>
+                        <button id="copyBtn" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-200">
+                            📋 Copy Prompt
+                        </button>
+                    </div>
+                    <pre id="generated-prompt" class="whitespace-pre-wrap text-sm bg-white p-4 rounded border max-h-96 overflow-y-auto"></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tool selection
+        document.querySelectorAll('.tool-card').forEach(card => {
+            card.addEventListener('click', () => {
+                document.querySelectorAll('.tool-card').forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+                document.getElementById('selected_tool').value = card.dataset.tool;
+            });
+        });
+
+        // Initialize with first tool selected
+        document.querySelector('.tool-card').classList.add('selected');
+
+        // Form submission
+        document.getElementById('promptForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const generateBtn = document.getElementById('generateBtn');
+            const loading = document.getElementById('loading');
+            const results = document.getElementById('results');
+            
+            // Show loading state
+            generateBtn.disabled = true;
+            generateBtn.textContent = '⏳ Generating...';
+            loading.classList.remove('hidden');
+            results.classList.add('hidden');
+            
+            try {
+                const response = await fetch('/generate', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    document.getElementById('generated-prompt').textContent = data.prompt;
+                    document.getElementById('result-tool').textContent = data.app_details.selected_tool.replace('_', ' ');
+                    results.classList.remove('hidden');
+                } else {
+                    alert('Error: ' + data.error);
+                }
+            } catch (error) {
+                alert('Error generating prompt: ' + error.message);
+            } finally {
+                // Reset button state
+                generateBtn.disabled = false;
+                generateBtn.textContent = '🎯 Generate UI/UX Prompt';
+                loading.classList.add('hidden');
+            }
+        });
+
+        // Copy to clipboard
+        document.getElementById('copyBtn').addEventListener('click', () => {
+            const prompt = document.getElementById('generated-prompt').textContent;
+            navigator.clipboard.writeText(prompt).then(() => {
+                const btn = document.getElementById('copyBtn');
+                const originalText = btn.textContent;
+                btn.textContent = '✅ Copied!';
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>
