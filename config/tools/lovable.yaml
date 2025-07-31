@@ -1,68 +1,68 @@
-tool_name: Lovable
-format: command_based
-tone: friendly_helpful
-framework: React/TypeScript web application development
-preferred_use_cases:
-- web_development
-- mobile_development
-- code_generation
-- debugging
-- testing
-- api_integration
-prompting_strategies:
-  step_by_step:
-    template: 'Step 1: {analysis} Step 2: {implementation} Step 3: {validation}'
-    use_cases:
-    - complex_tasks
-    - debugging
-    effectiveness_score: 0.9
-  tool_based:
-    template: Use {tool_name} to {action} for {objective}
-    use_cases:
-    - automated_tasks
-    - integrations
-    effectiveness_score: 0.85
-  context_aware:
-    template: 'Given context: {context}, implement {requirement} ensuring {constraints}'
-    use_cases:
-    - contextual_development
-    - adaptive_solutions
-    effectiveness_score: 0.8
-development_stages:
-- planning
-- architecture
-- implementation
-- integration
-- testing
-supported_components:
-- react_components
-- pages
-- apis
-- database_models
-capabilities:
-- draw inspiration from (unless they already mentioned a design they want to use)
-- clear
-- iterate on it
-- clone this repo and push changes
-- fix them
-- use to add a sidebar to your Lovable project
-- 'type ''{ name: string; Icon: LucideIcon; }[]'''
-- use them in your responses
-- clear explanations whether you're making changes or just chatting
-- custom domains (yet)
-constraints:
-- catch errors with try/catch blocks unless specifically requested by the user
-- if) you need to modify code
-- do too much
-- way you can modify package
-- use //
-- '**ONE** <lov-code> block to wrap **ALL** code changes and technical details in
-  your response'
-- reply to them and remember to follow the correct syntax
-- match the design you'll implement
-documentation_sources:
-- data/lovable_docs/comprehensive_system_prompt.md
-extracted_metadata:
-  source: comprehensive_ai_tools_repository
-  files_processed: 3
-  has_tools_config: true
+# Lovable Configuration
+# Generated from extracted documentation
+
+tool:
+  name: "lovable"
+  display_name: "Lovable"
+  description: "Lovable.dev - AI-powered web application builder with React and modern frameworks"
+  
+  # Tool classification
+  type: "code_generator"
+  category: "ai_development_tool"
+  
+  # Capabilities
+  primary_use_cases:
+    - "web development"
+    - "backend development"
+    - "mobile development"
+    - "ai development"
+    - "code generation"
+    - "code analysis"
+    - "documentation"
+    - "testing"
+  
+  supported_languages:
+    - "javascript"
+    - "typescript"
+    - "python"
+    - "go"
+  
+  key_features:
+    - "real-time collaboration"
+    - "code completion"
+    - "debugging"
+    - "version control"
+    - "deployment"
+    - "testing"
+    - "refactoring"
+    - "documentation generation"
+  
+  # Documentation files
+  documentation:
+    folder: "lovable_docs"
+    primary_files:
+    - "Agent Prompt.txt"
+    - "Prompt.txt"
+    all_files:
+    - "Agent Prompt.txt"
+    - "Agent Tools.json"
+    - "Prompt.txt"
+  
+  # Prompt generation settings
+  prompt_generation:
+    include_system_prompts: true
+    include_examples: true
+    include_best_practices: true
+    context_window_size: 4000
+    
+  # Integration settings
+  integration:
+    api_available: false
+    web_interface: true
+    cli_available: false
+    
+  # Metadata
+  metadata:
+    extraction_date: "2025-07-31T17:54:38.543081"
+    source_repository: "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools"
+    file_count: 3

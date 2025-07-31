@@ -1,0 +1,253 @@
+{
+  "extraction_date": "2025-07-31T17:54:38.543081",
+  "source_repository": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
+  "tools": {
+    "lovable": {
+      "folder": "lovable_docs",
+      "file_count": 3,
+      "files": [
+        "Agent Prompt.txt",
+        "Agent Tools.json",
+        "Prompt.txt"
+      ],
+      "primary_files": [
+        "Agent Prompt.txt",
+        "Prompt.txt"
+      ]
+    },
+    "cursor": {
+      "folder": "cursor_docs",
+      "file_count": 7,
+      "files": [
+        "Agent Prompt v1.0.txt",
+        "Agent Prompt v1.2.txt",
+        "Agent Prompt.txt",
+        "Agent Tools v1.0.json",
+        "Chat Prompt.txt",
+        "Memory Prompt.txt",
+        "Memory Rating Prompt.txt"
+      ],
+      "primary_files": [
+        "Agent Prompt.txt",
+        "Chat Prompt.txt",
+        "Memory Prompt.txt",
+        "Memory Rating Prompt.txt"
+      ]
+    },
+    "v0": {
+      "folder": "v0_docs",
+      "file_count": 1,
+      "files": [
+        "Prompt.txt"
+      ],
+      "primary_files": [
+        "Prompt.txt"
+      ]
+    },
+    "devin": {
+      "folder": "devin_docs",
+      "file_count": 1,
+      "files": [
+        "Prompt.txt"
+      ],
+      "primary_files": [
+        "Prompt.txt"
+      ]
+    },
+    "replit": {
+      "folder": "replit_docs",
+      "file_count": 2,
+      "files": [
+        "Prompt.txt",
+        "Tools.json"
+      ],
+      "primary_files": [
+        "Prompt.txt"
+      ]
+    },
+    "windsurf": {
+      "folder": "windsurf_docs",
+      "file_count": 2,
+      "files": [
+        "Prompt Wave 11.txt",
+        "Tools Wave 11.txt"
+      ],
+      "primary_files": []
+    },
+    "vscode": {
+      "folder": "vscode_docs",
+      "file_count": 1,
+      "files": [
+        "Prompt.txt"
+      ],
+      "primary_files": [
+        "Prompt.txt"
+      ]
+    },
+    "same": {
+      "folder": "same_docs",
+      "file_count": 2,
+      "files": [
+        "Prompt.txt",
+        "Tools.json"
+      ],
+      "primary_files": [
+        "Prompt.txt"
+      ]
+    },
+    "manus": {
+      "folder": "manus_docs",
+      "file_count": 4,
+      "files": [
+        "Agent loop.txt",
+        "Modules.txt",
+        "Prompt.txt",
+        "tools.json"
+      ],
+      "primary_files": [
+        "Prompt.txt"
+      ]
+    },
+    "trae": {
+      "folder": "trae_docs",
+      "file_count": 1,
+      "files": [
+        "Chat Prompt.txt"
+      ],
+      "primary_files": [
+        "Chat Prompt.txt"
+      ]
+    },
+    "cluely": {
+      "folder": "cluely_docs",
+      "file_count": 2,
+      "files": [
+        "Default Prompt.txt",
+        "Enterprise Prompt.txt"
+      ],
+      "primary_files": [
+        "Default Prompt.txt",
+        "Enterprise Prompt.txt"
+      ]
+    },
+    "perplexity": {
+      "folder": "perplexity_docs",
+      "file_count": 1,
+      "files": [
+        "Prompt.txt"
+      ],
+      "primary_files": [
+        "Prompt.txt"
+      ]
+    },
+    "xcode": {
+      "folder": "xcode_docs",
+      "file_count": 6,
+      "files": [
+        "DocumentAction.txt",
+        "ExplainAction.txt",
+        "MessageAction.txt",
+        "PlaygroundAction.txt",
+        "PreviewAction.txt",
+        "System.txt"
+      ],
+      "primary_files": [
+        "System.txt"
+      ]
+    },
+    "spawn": {
+      "folder": "spawn_docs",
+      "file_count": 1,
+      "files": [
+        "Prompt.txt"
+      ],
+      "primary_files": [
+        "Prompt.txt"
+      ]
+    },
+    "orchids": {
+      "folder": "orchids_docs",
+      "file_count": 2,
+      "files": [
+        "Decision-making prompt.txt",
+        "System Prompt.txt"
+      ],
+      "primary_files": [
+        "Decision-making prompt.txt",
+        "System Prompt.txt"
+      ]
+    },
+    "warp": {
+      "folder": "warp_docs",
+      "file_count": 1,
+      "files": [
+        "Prompt.txt"
+      ],
+      "primary_files": [
+        "Prompt.txt"
+      ]
+    },
+    "dia": {
+      "folder": "dia_docs",
+      "file_count": 1,
+      "files": [
+        "Prompt.txt"
+      ],
+      "primary_files": [
+        "Prompt.txt"
+      ]
+    },
+    "junie": {
+      "folder": "junie_docs",
+      "file_count": 1,
+      "files": [
+        "Prompt.txt"
+      ],
+      "primary_files": [
+        "Prompt.txt"
+      ]
+    },
+    "kiro": {
+      "folder": "kiro_docs",
+      "file_count": 3,
+      "files": [
+        "Mode_Clasifier_Prompt.txt",
+        "Spec_Prompt.txt",
+        "Vibe_Prompt.txt"
+      ],
+      "primary_files": [
+        "Mode_Clasifier_Prompt.txt",
+        "Spec_Prompt.txt",
+        "Vibe_Prompt.txt"
+      ]
+    },
+    "zai": {
+      "folder": "zai_docs",
+      "file_count": 1,
+      "files": [
+        "prompt.txt"
+      ],
+      "primary_files": [
+        "prompt.txt"
+      ]
+    },
+    "opensource": {
+      "folder": "opensource_docs",
+      "file_count": 5,
+      "files": [
+        "Bolt\\Prompt.txt",
+        "Cline\\Prompt.txt",
+        "Codex CLI\\Prompt.txt",
+        "Lumo\\Prompt.txt",
+        "RooCode\\Prompt.txt"
+      ],
+      "primary_files": [
+        "Bolt\\Prompt.txt",
+        "Cline\\Prompt.txt",
+        "Codex CLI\\Prompt.txt",
+        "Lumo\\Prompt.txt",
+        "RooCode\\Prompt.txt"
+      ]
+    }
+  }
+}

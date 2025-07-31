@@ -1,55 +1,63 @@
-tool_name: Cluely
-format: natural_language
-tone: professional
-framework: AI-assisted development
-preferred_use_cases:
-- web_development
-- code_generation
-prompting_strategies:
-  step_by_step:
-    template: 'Step 1: {analysis} Step 2: {implementation} Step 3: {validation}'
-    use_cases:
-    - complex_tasks
-    - debugging
-    effectiveness_score: 0.9
-  tool_based:
-    template: Use {tool_name} to {action} for {objective}
-    use_cases:
-    - automated_tasks
-    - integrations
-    effectiveness_score: 0.85
-  context_aware:
-    template: 'Given context: {context}, implement {requirement} ensuring {constraints}'
-    use_cases:
-    - contextual_development
-    - adaptive_solutions
-    effectiveness_score: 0.8
-development_stages:
-- planning
-- implementation
-- testing
-- deployment
-supported_components:
-- code
-- documentation
-- tests
-capabilities:
-- see the user's screen (the screenshot attached) and the audio history of the entire
-  conversation
-- potential things to say
-- context around a proper noun or term that appears **in the last 10-15 words** of
-  the transcript
-- "1\u20133 targeted follow-up questions to drive the conversation forward"
-constraints:
-- 'Them: can be mislabeled as Me:'
-- get distracted by earlier content
-- enter passive mode when you are highly confident that no action
-- if relevant for helping with the audio conversation
-- see the value in switching
-- acknowledge passively (e
-documentation_sources:
-- data/cluely_docs/comprehensive_system_prompt.md
-extracted_metadata:
-  source: comprehensive_ai_tools_repository
-  files_processed: 2
-  has_tools_config: false
+# Cluely Configuration
+# Generated from extracted documentation
+
+tool:
+  name: "cluely"
+  display_name: "Cluely"
+  description: "Cluely - AI development tool"
+  
+  # Tool classification
+  type: "general"
+  category: "ai_development_tool"
+  
+  # Capabilities
+  primary_use_cases:
+    - "web development"
+    - "backend development"
+    - "ai development"
+    - "code generation"
+    - "documentation"
+    - "testing"
+  
+  supported_languages:
+    - "javascript"
+    - "typescript"
+    - "python"
+    - "go"
+  
+  key_features:
+    - "real-time collaboration"
+    - "code completion"
+    - "version control"
+    - "deployment"
+    - "testing"
+    - "refactoring"
+  
+  # Documentation files
+  documentation:
+    folder: "cluely_docs"
+    primary_files:
+    - "Default Prompt.txt"
+    - "Enterprise Prompt.txt"
+    all_files:
+    - "Default Prompt.txt"
+    - "Enterprise Prompt.txt"
+  
+  # Prompt generation settings
+  prompt_generation:
+    include_system_prompts: true
+    include_examples: true
+    include_best_practices: true
+    context_window_size: 4000
+    
+  # Integration settings
+  integration:
+    api_available: false
+    web_interface: true
+    cli_available: false
+    
+  # Metadata
+  metadata:
+    extraction_date: "2025-07-31T17:54:38.543081"
+    source_repository: "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools"
+    file_count: 2

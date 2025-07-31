@@ -1,23 +1,55 @@
-tool_name: Trae
-format: natural_language
-tone: balanced_technical
-framework: AI-assisted development
-preferred_use_cases: []
-prompting_strategies: {}
-development_stages:
-- planning
-- implementation
-- testing
-- deployment
-supported_components:
-- code
-- documentation
-- tests
-capabilities: []
-constraints: []
-documentation_sources:
-- data/trae_docs/comprehensive_system_prompt.md
-extracted_metadata:
-  source: comprehensive_ai_tools_repository
-  files_processed: 1
-  has_tools_config: false
+# Trae Configuration
+# Generated from extracted documentation
+
+tool:
+  name: "trae"
+  display_name: "Trae"
+  description: "Trae - AI development tool"
+  
+  # Tool classification
+  type: "general"
+  category: "ai_development_tool"
+  
+  # Capabilities
+  primary_use_cases:
+    - "web development"
+    - "ai development"
+    - "code generation"
+    - "code analysis"
+    - "documentation"
+  
+  supported_languages:
+    - "typescript"
+    - "python"
+    - "go"
+  
+  key_features:
+    - "code completion"
+    - "debugging"
+  
+  # Documentation files
+  documentation:
+    folder: "trae_docs"
+    primary_files:
+    - "Chat Prompt.txt"
+    all_files:
+    - "Chat Prompt.txt"
+  
+  # Prompt generation settings
+  prompt_generation:
+    include_system_prompts: true
+    include_examples: true
+    include_best_practices: true
+    context_window_size: 4000
+    
+  # Integration settings
+  integration:
+    api_available: false
+    web_interface: true
+    cli_available: false
+    
+  # Metadata
+  metadata:
+    extraction_date: "2025-07-31T17:54:38.543081"
+    source_repository: "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools"
+    file_count: 1

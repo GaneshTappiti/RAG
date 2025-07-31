@@ -1,66 +1,61 @@
-tool_name: Warp
-format: command_based
-tone: balanced_technical
-framework: AI-assisted development
-preferred_use_cases:
-- web_development
-- code_generation
-- testing
-- api_integration
-prompting_strategies:
-  step_by_step:
-    template: 'Step 1: {analysis} Step 2: {implementation} Step 3: {validation}'
-    use_cases:
-    - complex_tasks
-    - debugging
-    effectiveness_score: 0.9
-  tool_based:
-    template: Use {tool_name} to {action} for {objective}
-    use_cases:
-    - automated_tasks
-    - integrations
-    effectiveness_score: 0.85
-  context_aware:
-    template: 'Given context: {context}, implement {requirement} ensuring {constraints}'
-    use_cases:
-    - contextual_development
-    - adaptive_solutions
-    effectiveness_score: 0.8
-development_stages:
-- planning
-- implementation
-- testing
-- deployment
-supported_components:
-- code
-- documentation
-- tests
-capabilities:
-- concise instructions (without running any commands) about how the user can do it
-  and nothing more
-- it)
-- trace it to `utils/format
-- usually assume that the user's is using `git`
-- use the `gh` CLI to fetch information about pull requests and issues
-- use a command to do so (e
-- ask the user if they'd like to lint or format the code after the changes have been
-  made
-- a response
-- make a new request to read a different line range
-- also use CLIs for the repository host
-constraints:
-- automatically commit and push the changes without confirmation
-- ask questions about minor details that you could use your own judgment for
-- run commands that result in a pager - if you do so
-- ask the user to define what "recent" means
-- blindly suggest edits to files without an understanding of their current state
-- automatically assume the user wants to run the build right after finishing an initial
-  coding task
-- if its apparent that its relevant to the task at hand
-- retrieve those line ranges
-documentation_sources:
-- data/warp_docs/comprehensive_system_prompt.md
-extracted_metadata:
-  source: comprehensive_ai_tools_repository
-  files_processed: 1
-  has_tools_config: false
+# Warp Configuration
+# Generated from extracted documentation
+
+tool:
+  name: "warp"
+  display_name: "Warp"
+  description: "Warp - AI development tool"
+  
+  # Tool classification
+  type: "general"
+  category: "ai_development_tool"
+  
+  # Capabilities
+  primary_use_cases:
+    - "web development"
+    - "backend development"
+    - "ai development"
+    - "code generation"
+    - "documentation"
+    - "testing"
+  
+  supported_languages:
+    - "javascript"
+    - "typescript"
+    - "python"
+    - "go"
+  
+  key_features:
+    - "code completion"
+    - "debugging"
+    - "version control"
+    - "deployment"
+    - "testing"
+    - "documentation generation"
+  
+  # Documentation files
+  documentation:
+    folder: "warp_docs"
+    primary_files:
+    - "Prompt.txt"
+    all_files:
+    - "Prompt.txt"
+  
+  # Prompt generation settings
+  prompt_generation:
+    include_system_prompts: true
+    include_examples: true
+    include_best_practices: true
+    context_window_size: 4000
+    
+  # Integration settings
+  integration:
+    api_available: false
+    web_interface: true
+    cli_available: false
+    
+  # Metadata
+  metadata:
+    extraction_date: "2025-07-31T17:54:38.543081"
+    source_repository: "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools"
+    file_count: 1

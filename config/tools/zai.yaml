@@ -1,48 +1,60 @@
-tool_name: Zai
-format: command_based
-tone: friendly_helpful
-framework: AI-assisted development
-preferred_use_cases:
-- web_development
-- mobile_development
-- code_generation
-- testing
-- api_integration
-prompting_strategies:
-  tool_based:
-    template: Use {tool_name} to {action} for {objective}
-    use_cases:
-    - automated_tasks
-    - integrations
-    effectiveness_score: 0.85
-development_stages:
-- planning
-- implementation
-- testing
-- deployment
-supported_components:
-- code
-- documentation
-- tests
-capabilities:
-- use this tool to generate image for website favicon and logo
-- real-time communication
-- use it when you need
-- install new packages if you need
-- use read the `/home/z/my-project/dev
-- refer to the `examples/websocket/page
-- use websocket/socket
-- use this tool to generate website image
-- you to assist the user
-- use this tool to generate image for your project
-constraints:
-- read the most recent logs from dev
-- see 3000 port in auto dev server
-- specify preferences
-- see the / route defined in the src/app/page
-documentation_sources:
-- data/zai_docs/comprehensive_system_prompt.md
-extracted_metadata:
-  source: comprehensive_ai_tools_repository
-  files_processed: 1
-  has_tools_config: false
+# Zai Configuration
+# Generated from extracted documentation
+
+tool:
+  name: "zai"
+  display_name: "Zai"
+  description: "Zai - AI development tool"
+  
+  # Tool classification
+  type: "general"
+  category: "ai_development_tool"
+  
+  # Capabilities
+  primary_use_cases:
+    - "web development"
+    - "backend development"
+    - "mobile development"
+    - "ai development"
+    - "code generation"
+    - "testing"
+  
+  supported_languages:
+    - "javascript"
+    - "typescript"
+    - "java"
+    - "go"
+  
+  key_features:
+    - "real-time collaboration"
+    - "code completion"
+    - "debugging"
+    - "deployment"
+    - "testing"
+  
+  # Documentation files
+  documentation:
+    folder: "zai_docs"
+    primary_files:
+    - "prompt.txt"
+    all_files:
+    - "prompt.txt"
+  
+  # Prompt generation settings
+  prompt_generation:
+    include_system_prompts: true
+    include_examples: true
+    include_best_practices: true
+    context_window_size: 4000
+    
+  # Integration settings
+  integration:
+    api_available: false
+    web_interface: true
+    cli_available: false
+    
+  # Metadata
+  metadata:
+    extraction_date: "2025-07-31T17:54:38.543081"
+    source_repository: "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools"
+    file_count: 1

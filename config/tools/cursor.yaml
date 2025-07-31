@@ -1,56 +1,69 @@
-tool_name: Cursor
-format: command_based
-tone: balanced_technical
-framework: Agentic AI pair programming with Claude integration
-preferred_use_cases:
-- web_development
-- code_generation
-- debugging
-prompting_strategies:
-  step_by_step:
-    template: 'Step 1: {analysis} Step 2: {implementation} Step 3: {validation}'
-    use_cases:
-    - complex_tasks
-    - debugging
-    effectiveness_score: 0.9
-  tool_based:
-    template: Use {tool_name} to {action} for {objective}
-    use_cases:
-    - automated_tasks
-    - integrations
-    effectiveness_score: 0.85
-  context_aware:
-    template: 'Given context: {context}, implement {requirement} ensuring {constraints}'
-    use_cases:
-    - contextual_development
-    - adaptive_solutions
-    effectiveness_score: 0.8
-development_stages:
-- analysis
-- coding
-- debugging
-- optimization
-supported_components:
-- code_files
-- functions
-- classes
-- modules
-capabilities:
-- a specific value for a parameter (for example provided in quotes)
-- use either a relative path in the workspace or an absolute path
-- all necessary parameters
-- easily figure out how to)
-constraints:
-- know where it's located exactly
-- the precise lines of code that you wish to edit
-- calls tools when they are necessary
-- IF the diff is not what you expected
-- search in particular directories
-- acceptable format for code citations
-- be deleted"
-documentation_sources:
-- data/cursor_docs/comprehensive_system_prompt.md
-extracted_metadata:
-  source: comprehensive_ai_tools_repository
-  files_processed: 7
-  has_tools_config: true
+# Cursor Configuration
+# Generated from extracted documentation
+
+tool:
+  name: "cursor"
+  display_name: "Cursor"
+  description: "Cursor - AI-powered code editor with intelligent code completion"
+  
+  # Tool classification
+  type: "ide"
+  category: "ai_development_tool"
+  
+  # Capabilities
+  primary_use_cases:
+    - "web development"
+    - "backend development"
+    - "ai development"
+    - "code generation"
+    - "code analysis"
+    - "documentation"
+    - "testing"
+  
+  supported_languages:
+    - "javascript"
+    - "typescript"
+    - "go"
+    - "rust"
+  
+  key_features:
+    - "debugging"
+    - "version control"
+    - "testing"
+    - "refactoring"
+  
+  # Documentation files
+  documentation:
+    folder: "cursor_docs"
+    primary_files:
+    - "Agent Prompt.txt"
+    - "Chat Prompt.txt"
+    - "Memory Prompt.txt"
+    - "Memory Rating Prompt.txt"
+    all_files:
+    - "Agent Prompt v1.0.txt"
+    - "Agent Prompt v1.2.txt"
+    - "Agent Prompt.txt"
+    - "Agent Tools v1.0.json"
+    - "Chat Prompt.txt"
+    - "Memory Prompt.txt"
+    - "Memory Rating Prompt.txt"
+  
+  # Prompt generation settings
+  prompt_generation:
+    include_system_prompts: true
+    include_examples: true
+    include_best_practices: true
+    context_window_size: 4000
+    
+  # Integration settings
+  integration:
+    api_available: false
+    web_interface: true
+    cli_available: false
+    
+  # Metadata
+  metadata:
+    extraction_date: "2025-07-31T17:54:38.543081"
+    source_repository: "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools"
+    file_count: 7

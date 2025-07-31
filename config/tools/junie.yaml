@@ -1,0 +1,52 @@
+# Junie Configuration
+# Generated from extracted documentation
+
+tool:
+  name: "junie"
+  display_name: "Junie"
+  description: "Junie - AI development tool"
+  
+  # Tool classification
+  type: "general"
+  category: "ai_development_tool"
+  
+  # Capabilities
+  primary_use_cases:
+    - "backend development"
+    - "ai development"
+    - "code generation"
+  
+  supported_languages:
+    - "typescript"
+    - "python"
+    - "go"
+  
+  key_features:
+    []
+  
+  # Documentation files
+  documentation:
+    folder: "junie_docs"
+    primary_files:
+    - "Prompt.txt"
+    all_files:
+    - "Prompt.txt"
+  
+  # Prompt generation settings
+  prompt_generation:
+    include_system_prompts: true
+    include_examples: true
+    include_best_practices: true
+    context_window_size: 4000
+    
+  # Integration settings
+  integration:
+    api_available: false
+    web_interface: true
+    cli_available: false
+    
+  # Metadata
+  metadata:
+    extraction_date: "2025-07-31T17:54:38.543081"
+    source_repository: "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools"
+    file_count: 1

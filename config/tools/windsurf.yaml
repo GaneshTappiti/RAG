@@ -1,53 +1,49 @@
-tool_name: Windsurf
-format: command_based
-tone: balanced_technical
-framework: Collaborative AI-assisted development
-preferred_use_cases:
-- web_development
-- code_generation
-- debugging
-- testing
-- api_integration
-prompting_strategies:
-  step_by_step:
-    template: 'Step 1: {analysis} Step 2: {implementation} Step 3: {validation}'
-    use_cases:
-    - complex_tasks
-    - debugging
-    effectiveness_score: 0.9
-  tool_based:
-    template: Use {tool_name} to {action} for {objective}
-    use_cases:
-    - automated_tasks
-    - integrations
-    effectiveness_score: 0.85
-  context_aware:
-    template: 'Given context: {context}, implement {requirement} ensuring {constraints}'
-    use_cases:
-    - contextual_development
-    - adaptive_solutions
-    effectiveness_score: 0.8
-development_stages:
-- exploration
-- development
-- collaboration
-- optimization
-supported_components:
-- collaborative_code
-- reviews
-- documentation
-capabilities:
-- solve the problem
-- a **BRIEF** summary of the changes that you have made
-- all necessary parameters
-- valuable context to guide your behavior and solve the task
-constraints:
-- allow the USER to override your judgement on this
-- make code changes if you are certain that you can solve the problem
-- call tools when they are absolutely necessary
-documentation_sources:
-- data/windsurf_docs/comprehensive_system_prompt.md
-extracted_metadata:
-  source: comprehensive_ai_tools_repository
-  files_processed: 2
-  has_tools_config: false
+# Windsurf Configuration
+# Generated from extracted documentation
+
+tool:
+  name: "windsurf"
+  display_name: "Windsurf"
+  description: "Windsurf - AI-powered development environment"
+  
+  # Tool classification
+  type: "general"
+  category: "ai_development_tool"
+  
+  # Capabilities
+  primary_use_cases:
+    []
+  
+  supported_languages:
+    []
+  
+  key_features:
+    []
+  
+  # Documentation files
+  documentation:
+    folder: "windsurf_docs"
+    primary_files:
+    []
+    all_files:
+    - "Prompt Wave 11.txt"
+    - "Tools Wave 11.txt"
+  
+  # Prompt generation settings
+  prompt_generation:
+    include_system_prompts: true
+    include_examples: true
+    include_best_practices: true
+    context_window_size: 4000
+    
+  # Integration settings
+  integration:
+    api_available: false
+    web_interface: true
+    cli_available: false
+    
+  # Metadata
+  metadata:
+    extraction_date: "2025-07-31T17:54:38.543081"
+    source_repository: "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools"
+    file_count: 2

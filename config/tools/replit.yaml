@@ -1,40 +1,62 @@
-tool_name: Replit
-format: command_based
-tone: balanced_technical
-framework: Cloud-based development environment
-preferred_use_cases:
-- web_development
-- code_generation
-- debugging
-- testing
-- api_integration
-prompting_strategies:
-  tool_based:
-    template: Use {tool_name} to {action} for {objective}
-    use_cases:
-    - automated_tasks
-    - integrations
-    effectiveness_score: 0.85
-development_stages:
-- setup
-- coding
-- testing
-- deployment
-supported_components:
-- scripts
-- applications
-- apis
-- databases
-capabilities:
-- deployment and debugging features
-- use these commands to overwrite existing workflows to edit them
-constraints:
-- when something needs to be compiled
-- make that mistake
-- workflows
-documentation_sources:
-- data/replit_docs/comprehensive_system_prompt.md
-extracted_metadata:
-  source: comprehensive_ai_tools_repository
-  files_processed: 2
-  has_tools_config: true
+# Replit Configuration
+# Generated from extracted documentation
+
+tool:
+  name: "replit"
+  display_name: "Replit"
+  description: "Replit - Cloud-based IDE with collaborative coding features"
+  
+  # Tool classification
+  type: "cloud_ide"
+  category: "ai_development_tool"
+  
+  # Capabilities
+  primary_use_cases:
+    - "web development"
+    - "backend development"
+    - "ai development"
+    - "code generation"
+    - "code analysis"
+    - "documentation"
+    - "testing"
+  
+  supported_languages:
+    - "javascript"
+    - "typescript"
+    - "python"
+    - "java"
+    - "php"
+  
+  key_features:
+    - "debugging"
+    - "version control"
+    - "deployment"
+    - "testing"
+  
+  # Documentation files
+  documentation:
+    folder: "replit_docs"
+    primary_files:
+    - "Prompt.txt"
+    all_files:
+    - "Prompt.txt"
+    - "Tools.json"
+  
+  # Prompt generation settings
+  prompt_generation:
+    include_system_prompts: true
+    include_examples: true
+    include_best_practices: true
+    context_window_size: 4000
+    
+  # Integration settings
+  integration:
+    api_available: false
+    web_interface: true
+    cli_available: false
+    
+  # Metadata
+  metadata:
+    extraction_date: "2025-07-31T17:54:38.543081"
+    source_repository: "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools"
+    file_count: 2

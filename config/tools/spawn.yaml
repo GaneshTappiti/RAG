@@ -1,23 +1,50 @@
-tool_name: Spawn
-format: natural_language
-tone: balanced_technical
-framework: AI-assisted development
-preferred_use_cases: []
-prompting_strategies: {}
-development_stages:
-- planning
-- implementation
-- testing
-- deployment
-supported_components:
-- code
-- documentation
-- tests
-capabilities: []
-constraints: []
-documentation_sources:
-- data/spawn_docs/comprehensive_system_prompt.md
-extracted_metadata:
-  source: comprehensive_ai_tools_repository
-  files_processed: 1
-  has_tools_config: false
+# Spawn Configuration
+# Generated from extracted documentation
+
+tool:
+  name: "spawn"
+  display_name: "Spawn"
+  description: "Spawn - AI game development platform"
+  
+  # Tool classification
+  type: "general"
+  category: "ai_development_tool"
+  
+  # Capabilities
+  primary_use_cases:
+    - "ai development"
+    - "code generation"
+  
+  supported_languages:
+    - "typescript"
+    - "go"
+  
+  key_features:
+    []
+  
+  # Documentation files
+  documentation:
+    folder: "spawn_docs"
+    primary_files:
+    - "Prompt.txt"
+    all_files:
+    - "Prompt.txt"
+  
+  # Prompt generation settings
+  prompt_generation:
+    include_system_prompts: true
+    include_examples: true
+    include_best_practices: true
+    context_window_size: 4000
+    
+  # Integration settings
+  integration:
+    api_available: false
+    web_interface: true
+    cli_available: false
+    
+  # Metadata
+  metadata:
+    extraction_date: "2025-07-31T17:54:38.543081"
+    source_repository: "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools"
+    file_count: 1

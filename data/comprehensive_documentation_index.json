@@ -1,0 +1,684 @@
+{
+  "ai_tools_documentation": {
+    "version": "1.0",
+    "extraction_date": "2025-07-31T17:54:38.543081",
+    "source_repository": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
+    "total_tools": 21,
+    "total_files": 48,
+    "tools": {
+      "lovable": {
+        "folder": "lovable_docs",
+        "file_count": 3,
+        "files": [
+          "Agent Prompt.txt",
+          "Agent Tools.json",
+          "Prompt.txt"
+        ],
+        "primary_files": [
+          "Agent Prompt.txt",
+          "Prompt.txt"
+        ],
+        "file_analysis": {
+          "Agent Prompt.txt": {
+            "size_bytes": 19617,
+            "line_count": 294,
+            "char_count": 19613,
+            "file_type": "system_prompt",
+            "contains_examples": true,
+            "contains_prompts": true
+          },
+          "Agent Tools.json": {
+            "size_bytes": 22518,
+            "line_count": 378,
+            "char_count": 22491,
+            "file_type": "tool_definitions",
+            "contains_examples": true,
+            "contains_prompts": false
+          },
+          "Prompt.txt": {
+            "size_bytes": 53888,
+            "line_count": 1551,
+            "char_count": 53888,
+            "file_type": "system_prompt",
+            "contains_examples": true,
+            "contains_prompts": true
+          }
+        }
+      },
+      "cursor": {
+        "folder": "cursor_docs",
+        "file_count": 7,
+        "files": [
+          "Agent Prompt v1.0.txt",
+          "Agent Prompt v1.2.txt",
+          "Agent Prompt.txt",
+          "Agent Tools v1.0.json",
+          "Chat Prompt.txt",
+          "Memory Prompt.txt",
+          "Memory Rating Prompt.txt"
+        ],
+        "primary_files": [
+          "Agent Prompt.txt",
+          "Chat Prompt.txt",
+          "Memory Prompt.txt",
+          "Memory Rating Prompt.txt"
+        ],
+        "file_analysis": {
+          "Agent Prompt v1.0.txt": {
+            "size_bytes": 9023,
+            "line_count": 83,
+            "char_count": 9023,
+            "file_type": "system_prompt",
+            "contains_examples": true,
+            "contains_prompts": true
+          },
+          "Agent Prompt v1.2.txt": {
+            "size_bytes": 32197,
+            "line_count": 568,
+            "char_count": 32189,
+            "file_type": "system_prompt",
+            "contains_examples": true,
+            "contains_prompts": true
+          },
+          "Agent Prompt.txt": {
+            "size_bytes": 18454,
+            "line_count": 62,
+            "char_count": 18454,
+            "file_type": "system_prompt",
+            "contains_examples": true,
+            "contains_prompts": true
+          },
+          "Agent Tools v1.0.json": {
+            "size_bytes": 23545,
+            "line_count": 327,
+            "char_count": 23545,
+            "file_type": "tool_definitions",
+            "contains_examples": true,
+            "contains_prompts": true
+          },
+          "Chat Prompt.txt": {
+            "size_bytes": 12569,
+            "line_count": 119,
+            "char_count": 12569,
+            "file_type": "system_prompt",
+            "contains_examples": true,
+            "contains_prompts": true
+          },
+          "Memory Prompt.txt": {
+            "size_bytes": 5258,
+            "line_count": 68,
+            "char_count": 5258,
+            "file_type": "system_prompt",
+            "contains_examples": true,
+            "contains_prompts": true
+          },
+          "Memory Rating Prompt.txt": {
+            "size_bytes": 7152,
+            "line_count": 86,
+            "char_count": 7152,
+            "file_type": "system_prompt",
+            "contains_examples": true,
+            "contains_prompts": true
+          }
+        }
+      },
+      "v0": {
+        "folder": "v0_docs",
+        "file_count": 1,
+        "files": [
+          "Prompt.txt"
+        ],
+        "primary_files": [
+          "Prompt.txt"
+        ],
+        "file_analysis": {
+          "Prompt.txt": {
+            "size_bytes": 41026,
+            "line_count": 969,
+            "char_count": 41026,
+            "file_type": "system_prompt",
+            "contains_examples": true,
+            "contains_prompts": true
+          }
+        }
+      },
+      "devin": {
+        "folder": "devin_docs",
+        "file_count": 1,
+        "files": [
+          "Prompt.txt"
+        ],
+        "primary_files": [
+          "Prompt.txt"
+        ],
+        "file_analysis": {
+          "Prompt.txt": {
+            "size_bytes": 34714,
+            "line_count": 402,
+            "char_count": 34711,
+            "file_type": "system_prompt",
+            "contains_examples": true,
+            "contains_prompts": true
+          }
+        }
+      },
+      "replit": {
+        "folder": "replit_docs",
+        "file_count": 2,
+        "files": [
+          "Prompt.txt",
+          "Tools.json"
+        ],
+        "primary_files": [
+          "Prompt.txt"
+        ],
+        "file_analysis": {
+          "Prompt.txt": {
+            "size_bytes": 8110,
+            "line_count": 137,
+            "char_count": 8110,
+            "file_type": "system_prompt",
+            "contains_examples": true,
+            "contains_prompts": true
+          },
+          "Tools.json": {
+            "size_bytes": 25003,
+            "line_count": 376,
+            "char_count": 25003,
+            "file_type": "tool_definitions",
+            "contains_examples": true,
+            "contains_prompts": true
+          }
+        }
+      },
+      "windsurf": {
+        "folder": "windsurf_docs",
+        "file_count": 2,
+        "files": [
+          "Prompt Wave 11.txt",
+          "Tools Wave 11.txt"
+        ],
+        "primary_files": [],
+        "file_analysis": {
+          "Prompt Wave 11.txt": {
+            "size_bytes": 11699,
+            "line_count": 125,
+            "char_count": 11697,
+            "file_type": "system_prompt",
+            "contains_examples": true,
+            "contains_prompts": true
+          },
+          "Tools Wave 11.txt": {
+            "size_bytes": 32843,
+            "line_count": 382,
+            "char_count": 32843,
+            "file_type": "general_documentation",
+            "contains_examples": true,
+            "contains_prompts": true
+          }
+        }
+      },
+      "vscode": {
+        "folder": "vscode_docs",
+        "file_count": 1,
+        "files": [
+          "Prompt.txt"
+        ],
+        "primary_files": [
+          "Prompt.txt"
+        ],
+        "file_analysis": {
+          "Prompt.txt": {
+            "size_bytes": 21032,
+            "line_count": 404,
+            "char_count": 21032,
+            "file_type": "system_prompt",
+            "contains_examples": true,
+            "contains_prompts": true
+          }
+        }
+      },
+      "same": {
+        "folder": "same_docs",
+        "file_count": 2,
+        "files": [
+          "Prompt.txt",
+          "Tools.json"
+        ],
+        "primary_files": [
+          "Prompt.txt"
+        ],
+        "file_analysis": {
+          "Prompt.txt": {
+            "size_bytes": 18205,
+            "line_count": 156,
+            "char_count": 18205,
+            "file_type": "system_prompt",
+            "contains_examples": true,
+            "contains_prompts": true
+          },
+          "Tools.json": {
+            "size_bytes": 22357,
+            "line_count": 401,
+            "char_count": 22357,
+            "file_type": "tool_definitions",
+            "contains_examples": true,
+            "contains_prompts": false
+          }
+        }
+      },
+      "manus": {
+        "folder": "manus_docs",
+        "file_count": 4,
+        "files": [
+          "Agent loop.txt",
+          "Modules.txt",
+          "Prompt.txt",
+          "tools.json"
+        ],
+        "primary_files": [
+          "Prompt.txt"
+        ],
+        "file_analysis": {
+          "Agent loop.txt": {
+            "size_bytes": 2147,
+            "line_count": 33,
+            "char_count": 2147,
+            "file_type": "agent_configuration",
+            "contains_examples": false,
+            "contains_prompts": true
+          },
+          "Modules.txt": {
+            "size_bytes": 12224,
+            "line_count": 206,
+            "char_count": 12224,
+            "file_type": "general_documentation",
+            "contains_examples": true,
+            "contains_prompts": true
+          },
+          "Prompt.txt": {
+            "size_bytes": 10209,
+            "line_count": 250,
+            "char_count": 10209,
+            "file_type": "system_prompt",
+            "contains_examples": true,
+            "contains_prompts": true
+          },
+          "tools.json": {
+            "size_bytes": 18501,
+            "line_count": 614,
+            "char_count": 18501,
+            "file_type": "tool_definitions",
+            "contains_examples": false,
+            "contains_prompts": false
+          }
+        }
+      },
+      "trae": {
+        "folder": "trae_docs",
+        "file_count": 1,
+        "files": [
+          "Chat Prompt.txt"
+        ],
+        "primary_files": [
+          "Chat Prompt.txt"
+        ],
+        "file_analysis": {
+          "Chat Prompt.txt": {
+            "size_bytes": 8443,
+            "line_count": 112,
+            "char_count": 7923,
+            "file_type": "system_prompt",
+            "contains_examples": true,
+            "contains_prompts": true
+          }
+        }
+      },
+      "cluely": {
+        "folder": "cluely_docs",
+        "file_count": 2,
+        "files": [
+          "Default Prompt.txt",
+          "Enterprise Prompt.txt"
+        ],
+        "primary_files": [
+          "Default Prompt.txt",
+          "Enterprise Prompt.txt"
+        ],
+        "file_analysis": {
+          "Default Prompt.txt": {
+            "size_bytes": 4534,
+            "line_count": 95,
+            "char_count": 4522,
+            "file_type": "system_prompt",
+            "contains_examples": false,
+            "contains_prompts": true
+          },
+          "Enterprise Prompt.txt": {
+            "size_bytes": 21306,
+            "line_count": 471,
+            "char_count": 21254,
+            "file_type": "system_prompt",
+            "contains_examples": true,
+            "contains_prompts": true
+          }
+        }
+      },
+      "perplexity": {
+        "folder": "perplexity_docs",
+        "file_count": 1,
+        "files": [
+          "Prompt.txt"
+        ],
+        "primary_files": [
+          "Prompt.txt"
+        ],
+        "file_analysis": {
+          "Prompt.txt": {
+            "size_bytes": 9391,
+            "line_count": 195,
+            "char_count": 9381,
+            "file_type": "system_prompt",
+            "contains_examples": true,
+            "contains_prompts": true
+          }
+        }
+      },
+      "xcode": {
+        "folder": "xcode_docs",
+        "file_count": 6,
+        "files": [
+          "DocumentAction.txt",
+          "ExplainAction.txt",
+          "MessageAction.txt",
+          "PlaygroundAction.txt",
+          "PreviewAction.txt",
+          "System.txt"
+        ],
+        "primary_files": [
+          "System.txt"
+        ],
+        "file_analysis": {
+          "DocumentAction.txt": {
+            "size_bytes": 374,
+            "line_count": 18,
+            "char_count": 374,
+            "file_type": "general_documentation",
+            "contains_examples": true,
+            "contains_prompts": false
+          },
+          "ExplainAction.txt": {
+            "size_bytes": 245,
+            "line_count": 15,
+            "char_count": 245,
+            "file_type": "general_documentation",
+            "contains_examples": true,
+            "contains_prompts": false
+          },
+          "MessageAction.txt": {
+            "size_bytes": 235,
+            "line_count": 13,
+            "char_count": 235,
+            "file_type": "general_documentation",
+            "contains_examples": true,
+            "contains_prompts": false
+          },
+          "PlaygroundAction.txt": {
+            "size_bytes": 414,
+            "line_count": 20,
+            "char_count": 414,
+            "file_type": "general_documentation",
+            "contains_examples": true,
+            "contains_prompts": false
+          },
+          "PreviewAction.txt": {
+            "size_bytes": 1938,
+            "line_count": 58,
+            "char_count": 1938,
+            "file_type": "general_documentation",
+            "contains_examples": true,
+            "contains_prompts": false
+          },
+          "System.txt": {
+            "size_bytes": 4009,
+            "line_count": 69,
+            "char_count": 4007,
+            "file_type": "general_documentation",
+            "contains_examples": true,
+            "contains_prompts": false
+          }
+        }
+      },
+      "spawn": {
+        "folder": "spawn_docs",
+        "file_count": 1,
+        "files": [
+          "Prompt.txt"
+        ],
+        "primary_files": [
+          "Prompt.txt"
+        ],
+        "file_analysis": {
+          "Prompt.txt": {
+            "size_bytes": 895,
+            "line_count": 10,
+            "char_count": 892,
+            "file_type": "system_prompt",
+            "contains_examples": false,
+            "contains_prompts": true
+          }
+        }
+      },
+      "orchids": {
+        "folder": "orchids_docs",
+        "file_count": 2,
+        "files": [
+          "Decision-making prompt.txt",
+          "System Prompt.txt"
+        ],
+        "primary_files": [
+          "Decision-making prompt.txt",
+          "System Prompt.txt"
+        ],
+        "file_analysis": {
+          "Decision-making prompt.txt": {
+            "size_bytes": 3979,
+            "line_count": 46,
+            "char_count": 3979,
+            "file_type": "system_prompt",
+            "contains_examples": false,
+            "contains_prompts": true
+          },
+          "System Prompt.txt": {
+            "size_bytes": 15273,
+            "line_count": 222,
+            "char_count": 15264,
+            "file_type": "system_prompt",
+            "contains_examples": true,
+            "contains_prompts": true
+          }
+        }
+      },
+      "warp": {
+        "folder": "warp_docs",
+        "file_count": 1,
+        "files": [
+          "Prompt.txt"
+        ],
+        "primary_files": [
+          "Prompt.txt"
+        ],
+        "file_analysis": {
+          "Prompt.txt": {
+            "size_bytes": 14595,
+            "line_count": 163,
+            "char_count": 14593,
+            "file_type": "system_prompt",
+            "contains_examples": true,
+            "contains_prompts": true
+          }
+        }
+      },
+      "dia": {
+        "folder": "dia_docs",
+        "file_count": 1,
+        "files": [
+          "Prompt.txt"
+        ],
+        "primary_files": [
+          "Prompt.txt"
+        ],
+        "file_analysis": {
+          "Prompt.txt": {
+            "size_bytes": 17194,
+            "line_count": 196,
+            "char_count": 17166,
+            "file_type": "system_prompt",
+            "contains_examples": true,
+            "contains_prompts": true
+          }
+        }
+      },
+      "junie": {
+        "folder": "junie_docs",
+        "file_count": 1,
+        "files": [
+          "Prompt.txt"
+        ],
+        "primary_files": [
+          "Prompt.txt"
+        ],
+        "file_analysis": {
+          "Prompt.txt": {
+            "size_bytes": 6184,
+            "line_count": 120,
+            "char_count": 6184,
+            "file_type": "system_prompt",
+            "contains_examples": true,
+            "contains_prompts": true
+          }
+        }
+      },
+      "kiro": {
+        "folder": "kiro_docs",
+        "file_count": 3,
+        "files": [
+          "Mode_Clasifier_Prompt.txt",
+          "Spec_Prompt.txt",
+          "Vibe_Prompt.txt"
+        ],
+        "primary_files": [
+          "Mode_Clasifier_Prompt.txt",
+          "Spec_Prompt.txt",
+          "Vibe_Prompt.txt"
+        ],
+        "file_analysis": {
+          "Mode_Clasifier_Prompt.txt": {
+            "size_bytes": 2883,
+            "line_count": 64,
+            "char_count": 2883,
+            "file_type": "system_prompt",
+            "contains_examples": true,
+            "contains_prompts": true
+          },
+          "Spec_Prompt.txt": {
+            "size_bytes": 31947,
+            "line_count": 515,
+            "char_count": 31945,
+            "file_type": "system_prompt",
+            "contains_examples": true,
+            "contains_prompts": true
+          },
+          "Vibe_Prompt.txt": {
+            "size_bytes": 14151,
+            "line_count": 196,
+            "char_count": 14149,
+            "file_type": "system_prompt",
+            "contains_examples": true,
+            "contains_prompts": true
+          }
+        }
+      },
+      "zai": {
+        "folder": "zai_docs",
+        "file_count": 1,
+        "files": [
+          "prompt.txt"
+        ],
+        "primary_files": [
+          "prompt.txt"
+        ],
+        "file_analysis": {
+          "prompt.txt": {
+            "size_bytes": 9592,
+            "line_count": 237,
+            "char_count": 9592,
+            "file_type": "system_prompt",
+            "contains_examples": true,
+            "contains_prompts": true
+          }
+        }
+      },
+      "opensource": {
+        "folder": "opensource_docs",
+        "file_count": 5,
+        "files": [
+          "Bolt\\Prompt.txt",
+          "Cline\\Prompt.txt",
+          "Codex CLI\\Prompt.txt",
+          "Lumo\\Prompt.txt",
+          "RooCode\\Prompt.txt"
+        ],
+        "primary_files": [
+          "Bolt\\Prompt.txt",
+          "Cline\\Prompt.txt",
+          "Codex CLI\\Prompt.txt",
+          "Lumo\\Prompt.txt",
+          "RooCode\\Prompt.txt"
+        ],
+        "file_analysis": {
+          "Bolt\\Prompt.txt": {
+            "size_bytes": 21945,
+            "line_count": 470,
+            "char_count": 21943,
+            "file_type": "system_prompt",
+            "contains_examples": true,
+            "contains_prompts": true
+          },
+          "Cline\\Prompt.txt": {
+            "size_bytes": 47083,
+            "line_count": 607,
+            "char_count": 47083,
+            "file_type": "system_prompt",
+            "contains_examples": true,
+            "contains_prompts": true
+          },
+          "Codex CLI\\Prompt.txt": {
+            "size_bytes": 4848,
+            "line_count": 46,
+            "char_count": 4848,
+            "file_type": "system_prompt",
+            "contains_examples": true,
+            "contains_prompts": true
+          },
+          "Lumo\\Prompt.txt": {
+            "size_bytes": 6834,
+            "line_count": 155,
+            "char_count": 6824,
+            "file_type": "system_prompt",
+            "contains_examples": false,
+            "contains_prompts": true
+          },
+          "RooCode\\Prompt.txt": {
+            "size_bytes": 43961,
+            "line_count": 665,
+            "char_count": 43959,
+            "file_type": "system_prompt",
+            "contains_examples": true,
+            "contains_prompts": true
+          }
+        }
+      }
+    }
+  }
+}

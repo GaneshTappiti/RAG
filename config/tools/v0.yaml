@@ -1,65 +1,63 @@
-tool_name: V0
-format: command_based
-tone: balanced_technical
-framework: Component-driven UI generation with Next.js
-preferred_use_cases:
-- web_development
-- mobile_development
-- code_generation
-- testing
-- api_integration
-prompting_strategies:
-  step_by_step:
-    template: 'Step 1: {analysis} Step 2: {implementation} Step 3: {validation}'
-    use_cases:
-    - complex_tasks
-    - debugging
-    effectiveness_score: 0.9
-  tool_based:
-    template: Use {tool_name} to {action} for {objective}
-    use_cases:
-    - automated_tasks
-    - integrations
-    effectiveness_score: 0.85
-  context_aware:
-    template: 'Given context: {context}, implement {requirement} ensuring {constraints}'
-    use_cases:
-    - contextual_development
-    - adaptive_solutions
-    effectiveness_score: 0.8
-development_stages:
-- design
-- component_creation
-- styling
-- testing
-supported_components:
-- ui_components
-- layouts
-- styling
-- interactions
-capabilities:
-- assets and binaries via the special "```filetype file="path/to/file
-- instructions to move the header file and delete the sidebar file
-- execute them
-- customize this script further to suit your needs
-- a concise answer
-- assist with that
-- start
-- ticket at vercel
-- all languages like SQL and and React Native
-- URL(s) to websites
-constraints:
-- add new ones if a modification is needed
-- create one Code Project per response
-- be on used the server (e
-- use single dollar signs for inline math
-- uses the AI SDK via 'ai' and '@ai-sdk'
-- apologize or provide an explanation for the refusal
-- use QuickEdit when renaming files or projects
-- rewrite or delete existing SQL scripts that have already been executed
-documentation_sources:
-- data/v0_docs/comprehensive_system_prompt.md
-extracted_metadata:
-  source: comprehensive_ai_tools_repository
-  files_processed: 1
-  has_tools_config: false
+# V0 Configuration
+# Generated from extracted documentation
+
+tool:
+  name: "v0"
+  display_name: "V0"
+  description: "v0 by Vercel - AI interface designer and React component generator"
+  
+  # Tool classification
+  type: "code_generator"
+  category: "ai_development_tool"
+  
+  # Capabilities
+  primary_use_cases:
+    - "web development"
+    - "backend development"
+    - "mobile development"
+    - "ai development"
+    - "code generation"
+    - "code analysis"
+    - "documentation"
+    - "testing"
+  
+  supported_languages:
+    - "javascript"
+    - "typescript"
+    - "python"
+    - "java"
+    - "go"
+    - "rust"
+  
+  key_features:
+    - "real-time collaboration"
+    - "version control"
+    - "deployment"
+    - "testing"
+  
+  # Documentation files
+  documentation:
+    folder: "v0_docs"
+    primary_files:
+    - "Prompt.txt"
+    all_files:
+    - "Prompt.txt"
+  
+  # Prompt generation settings
+  prompt_generation:
+    include_system_prompts: true
+    include_examples: true
+    include_best_practices: true
+    context_window_size: 4000
+    
+  # Integration settings
+  integration:
+    api_available: false
+    web_interface: true
+    cli_available: false
+    
+  # Metadata
+  metadata:
+    extraction_date: "2025-07-31T17:54:38.543081"
+    source_repository: "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools"
+    file_count: 1

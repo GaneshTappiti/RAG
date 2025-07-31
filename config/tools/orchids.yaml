@@ -1,57 +1,61 @@
-tool_name: Orchids
-format: conversational
-tone: friendly_helpful
-framework: AI-assisted development
-preferred_use_cases:
-- web_development
-- code_generation
-- api_integration
-prompting_strategies:
-  tool_based:
-    template: Use {tool_name} to {action} for {objective}
-    use_cases:
-    - automated_tasks
-    - integrations
-    effectiveness_score: 0.85
-  context_aware:
-    template: 'Given context: {context}, implement {requirement} ensuring {constraints}'
-    use_cases:
-    - contextual_development
-    - adaptive_solutions
-    effectiveness_score: 0.8
-development_stages:
-- planning
-- implementation
-- testing
-- deployment
-supported_components:
-- code
-- documentation
-- tests
-capabilities:
-- the path relative to the project root
-- generate multiple videos in parallel
-- read the contents of multiple files in parallel
-- list the contents of multiple directories in parallel
-- generate multiple images in parallel
-- to accurately merge your edit snippet
-- the specific code provided to express these truncations
-- all necessary parameters
-- delete multiple files in parallel
-- create multiple files in parallel
-constraints:
-- '**after** all code files have been created for the current request'
-- use base CSS styling syntax here
-- use these directives in the file and nothing else when editing/creating the globals
-- call tools when they are necessary
-- APIs such as `cookies()`
-- call the edit_file tool with the edit snippet without showing the edit snippet to
-  the user
-- use event handlers in a client component
-- when absolutely necessary
-documentation_sources:
-- data/orchids_docs/comprehensive_system_prompt.md
-extracted_metadata:
-  source: comprehensive_ai_tools_repository
-  files_processed: 2
-  has_tools_config: false
+# Orchids Configuration
+# Generated from extracted documentation
+
+tool:
+  name: "orchids"
+  display_name: "Orchids"
+  description: "Orchids.app - AI-powered application development platform"
+  
+  # Tool classification
+  type: "general"
+  category: "ai_development_tool"
+  
+  # Capabilities
+  primary_use_cases:
+    - "web development"
+    - "backend development"
+    - "ai development"
+    - "code generation"
+    - "code analysis"
+    - "documentation"
+    - "testing"
+  
+  supported_languages:
+    - "javascript"
+    - "typescript"
+    - "go"
+  
+  key_features:
+    - "version control"
+    - "testing"
+    - "refactoring"
+    - "documentation generation"
+  
+  # Documentation files
+  documentation:
+    folder: "orchids_docs"
+    primary_files:
+    - "Decision-making prompt.txt"
+    - "System Prompt.txt"
+    all_files:
+    - "Decision-making prompt.txt"
+    - "System Prompt.txt"
+  
+  # Prompt generation settings
+  prompt_generation:
+    include_system_prompts: true
+    include_examples: true
+    include_best_practices: true
+    context_window_size: 4000
+    
+  # Integration settings
+  integration:
+    api_available: false
+    web_interface: true
+    cli_available: false
+    
+  # Metadata
+  metadata:
+    extraction_date: "2025-07-31T17:54:38.543081"
+    source_repository: "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools"
+    file_count: 2
