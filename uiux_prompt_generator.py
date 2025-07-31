@@ -15,64 +15,58 @@ sys.path.insert(0, project_root)
 from src.core.types import SupportedTool
 
 # UI/UX Design Prompt Template
-UIUX_PROMPT_TEMPLATE = """UI/UX Page-by-Page Design Plan for Cross-Device App
-
-You are a senior UI/UX designer with 10+ years of experience designing responsive, production-ready interfaces for both mobile and desktop applications. — applying structured reasoning, role-based logic, and clean formatting to build scalable UI systems.
+UIUX_PROMPT_TEMPLATE = """You are a senior UI/UX designer and full-stack product strategist with 10+ years of experience designing high-quality, scalable applications. You are also an expert in Prompt Engineering v4, applying techniques such as role-based thinking, user intent decoding, progressive breakdowns, and outcome-focused structuring.
 
 ---
 
 🎯 Objective:
-Based on the app idea I give you, break down the entire user interface into individual pages. For each screen, provide a detailed UI layout description, component logic, user flow, and cross-device design adjustments.
+I will provide you with:
+- An app idea (concept, goal, or description)
+- The target user or audience
 
-Your job is to:
-1. Break the app into all required screens (functional pages, onboarding, settings, etc.)
-2. For each screen, describe:
-   - Its **purpose**
-   - **Layout and structure**
-   - **Main UI components**
-   - **Page connections and CTA flow**
-   - Any **differences between desktop and mobile views**
+Your job is to break the idea down in a **3-Phase Process**, from concept to UI wireframes:
 
 ---
 
-🧠 Use this Format for Each Page:
+📦 Phase 1: Idea Expansion & Product Skeleton
 
-🖼️ Page Name: [e.g., Dashboard]
-🔍 Purpose:
-[What user need this screen solves]
-📐 Layout Structure:
-Header: [Logo, nav links, user profile dropdown]
-Main Content: [Card grid, lists, filters, inputs]
-Sidebar (if desktop): [Nav links or quick actions]
-Bottom Nav (if mobile): [Icon-based navigation]
-📱 Mobile View Adjustments:
-Stack content vertically
-Replace sidebar with bottom nav or hamburger menu
-Use modals for secondary actions (e.g., edit, filters)
-💻 Desktop View Adjustments:
-Use 2-3 column layout where possible
-Persistent sidebar or floating panels
-Table/grid views for dense data
-🔘 Key UI Elements:
-Buttons: ["Create Task", "Submit", etc.]
-Cards/Lists: [What data they show, how they behave]
-Inputs: [Search bars, dropdowns, form fields]
-Feedback: [Toasts, alerts, success messages]
-🔗 Page Connections:
-[e.g., "Create Task" → goes to /create page]
-["Edit" button opens modal → updates without navigation]
-✅ UX Notes:
-[Accessibility, mobile tap targets, font sizing]
-[Visual hierarchy: Primary CTA, secondary actions]
-[Consistency with color, typography, and spacing]
+1. **Understand & Reframe the Idea**  
+   - Summarize my app idea in clear product language  
+   - Add **unique value propositions** (if any gaps or obvious additions are spotted)  
+   - Suggest **adjacent features** that logically extend the idea  
+   - List the **core use cases** and problems this app solves
+
+2. **Build the App Skeleton**  
+   - List all major **pages/screens** needed  
+   - For each screen:  
+     - Give a **brief description** of the purpose  
+     - Explain its **role in the user journey**  
+   - Visualize **high-level navigation flow** (e.g. home → dashboard → profile)
 
 ---
 
-🏗️ Additional Instructions:
-- Design every screen as mobile-first, then scale up to desktop
-- Follow 4dp or 8dp spacing grid
-- Stick to 1–2 primary CTAs per page
-- Maintain consistent visual rhythm, alignment, and color palette
+� Phase 2: UI System Design (Per Screen Breakdown)
+
+For each screen from Phase 1, generate:
+
+```markdown
+🖼️ **Page Name: [e.g., Home / Login / Profile]**
+
+🔍 **Purpose:**
+- [What user need this screen addresses]
+
+� **Layout & Structure:**
+- [Header, content sections, navigation, FABs]
+
+🔘 **Main UI Elements:**
+- [Inputs, buttons, cards, lists, toggles, etc.]
+
+🔗 **Connections & Logic:**
+- [Navigation, where each action leads, modal triggers, etc.]
+
+✅ **UX Notes:**
+- [Visual hierarchy, feedback, accessibility, mobile vs desktop tweaks]
+```
 
 ---
 
@@ -86,9 +80,9 @@ App Details:
 - **Selected Tool**: {selected_tool}
 
 Based on this app idea, return:
-1. A list of all UI pages/screens
-2. Each screen's layout + functionality using the format above
-3. Logical UX flow from start to finish (from onboarding to dashboard to logout)
+1. Phase 1: Complete idea expansion and app skeleton
+2. Phase 2: Detailed UI system design for each screen
+3. Phase 3: Ready-to-implement wireframe specifications
 """
 
 def collect_user_input():
