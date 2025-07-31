@@ -1,5 +1,6 @@
 python-dotenv==1.0.1 # For reading environment variables stored in .env file
 flask>=2.0.0 # Web framework for the application
+waitress>=2.1.0 # Production WSGI server
 langchain>=0.2.2
 langchain-community>=0.2.3
 langchain-google-genai>=1.0.0 # For Google Gemini integration

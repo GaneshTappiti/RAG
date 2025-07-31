@@ -15,13 +15,15 @@ sys.path.insert(0, project_root)
 
 from src.core.types import SupportedTool, ProjectInfo, TaskContext, PromptStage
 from src.generators.enhanced_generator import EnhancedMultiToolGenerator
+from src.generators.llm_generator import LLMUIGenerator
 
 # Initialize Flask app
 app = Flask(__name__)
 app.secret_key = 'your-secret-key-here'  # Change this in production
 
-# Initialize the prompt generator
+# Initialize the prompt generator and LLM generator
 generator = EnhancedMultiToolGenerator()
+llm_generator = LLMUIGenerator()
 
 # UI/UX Design Prompt Template
 UIUX_PROMPT_TEMPLATE = """UI/UX Page-by-Page Design Plan for Cross-Device App
@@ -186,9 +188,86 @@ Generated with confidence score: {result.confidence_score}
 Applied strategy: {result.applied_strategy}
 """
 
+            # 🚀 NEW: Actually generate the UI/UX response using LLM
+            llm_response = llm_generator.generate_ui_response(enhanced_prompt, {
+                'app_name': app_name,
+                'platform': platform,
+                'design_style': design_style,
+                'style_description': style_description,
+                'app_idea': app_idea,
+                'target_users': target_users,
+                'selected_tool': selected_tool
+            })
+            
+            if llm_response['success']:
+                # Validate response quality
+                quality_metrics = llm_generator.validate_response_quality(llm_response['generated_ui_design'])
+                
+                return jsonify({
+                    'success': True,
+                    'generated_design': llm_response['generated_ui_design'],
+                    'prompt_used': enhanced_prompt,
+                    'quality_metrics': quality_metrics,
+                    'app_details': llm_response['app_details'],
+                    'model_info': {
+                        'model_used': llm_response['model_used'],
+                        'prompt_length': llm_response['prompt_length'],
+                        'response_length': llm_response['response_length']
+                    }
+                })
+            else:
+                # Fallback to prompt if LLM fails
+                return jsonify({
+                    'success': True,
+                    'generated_design': "LLM generation failed. Here's the formatted prompt:",
+                    'prompt_used': enhanced_prompt,
+                    'error': llm_response.get('error', 'Unknown LLM error'),
+                    'app_details': {
+                        'app_name': app_name,
+                        'platform': platform,
+                        'design_style': design_style,
+                        'style_description': style_description,
+                        'app_idea': app_idea,
+                        'target_users': target_users,
+                        'selected_tool': selected_tool
+                    }
+                })
+
         except Exception as e:
             print(f"Error getting tool context: {e}")
-            enhanced_prompt = generated_prompt
+            # Fallback: still generate LLM response with basic prompt
+            llm_response = llm_generator.generate_ui_response(generated_prompt, {
+                'app_name': app_name,
+                'platform': platform,
+                'design_style': design_style,
+                'style_description': style_description,
+                'app_idea': app_idea,
+                'target_users': target_users,
+                'selected_tool': selected_tool
+            })
+            
+            if llm_response['success']:
+                quality_metrics = llm_generator.validate_response_quality(llm_response['generated_ui_design'])
+                return jsonify({
+                    'success': True,
+                    'generated_design': llm_response['generated_ui_design'],
+                    'prompt_used': generated_prompt,
+                    'quality_metrics': quality_metrics,
+                    'app_details': llm_response['app_details'],
+                    'model_info': {
+                        'model_used': llm_response['model_used'],
+                        'prompt_length': llm_response['prompt_length'],
+                        'response_length': llm_response['response_length']
+                    },
+                    'note': 'Generated without enhanced RAG context due to error'
+                })
+            else:
+                # Complete fallback
+                return jsonify({
+                    'success': False,
+                    'error': f'Both RAG and LLM generation failed: {str(e)}',
+                    'prompt_fallback': generated_prompt
+                })
         
         return jsonify({
             'success': True,
@@ -253,4 +332,38 @@ if __name__ == '__main__':
     
     print("🚀 Starting AI Tool Prompt Generator Web App...")
     print("📋 Available at: http://localhost:5000")
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    print("💡 To avoid socket errors, use Ctrl+C to stop the server cleanly")
+    
+    # Check for command line arguments
+    import sys
+    no_reload = '--no-reload' in sys.argv
+    
+    if not no_reload:
+        print("⚡ Auto-reload enabled - changes will restart the server")
+    else:
+        print("🔒 Auto-reload disabled for stability")
+    print("-" * 50)
+    
+    # Configure Flask for better Windows compatibility
+    try:
+        # Use threaded mode and configure for Windows
+        app.run(
+            debug=True, 
+            host='127.0.0.1',  # Use localhost instead of 0.0.0.0 for Windows
+            port=5000,
+            threaded=True,
+            use_reloader=not no_reload,  # Disable reloader if --no-reload flag is used
+            reloader_type='stat' if not no_reload else None  # Use stat-based reloader instead of watchdog on Windows
+        )
+    except KeyboardInterrupt:
+        print("\n🛑 Server stopped by user")
+    except OSError as e:
+        if "10038" in str(e):
+            print(f"\n❌ Windows Socket Error: {e}")
+            print("💡 Try running with: python app.py --no-reload")
+            print("💡 Or use: python run_dev_server.py --no-reload")
+        else:
+            print(f"❌ OS Error: {e}")
+    except Exception as e:
+        print(f"❌ Server error: {e}")
+        print("💡 Try running with: python app.py --no-reload")

@@ -131,15 +131,55 @@
 
             <!-- Results -->
             <div id="results" class="hidden mt-8">
-                <h3 class="text-xl font-bold text-gray-800 mb-4">🎉 Your Generated Prompt</h3>
+                <h3 class="text-xl font-bold text-gray-800 mb-4">🎉 Your Generated UI/UX Design</h3>
+                
+                <!-- Quality Metrics -->
+                <div id="quality-metrics" class="hidden bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
+                    <h4 class="font-semibold text-blue-800 mb-2">📊 Design Quality Metrics</h4>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                        <div class="text-center">
+                            <div id="quality-score" class="text-lg font-bold text-blue-600">-</div>
+                            <div class="text-gray-600">Overall Score</div>
+                        </div>
+                        <div class="text-center">
+                            <div id="page-count" class="text-lg font-bold text-green-600">-</div>
+                            <div class="text-gray-600">Pages Designed</div>
+                        </div>
+                        <div class="text-center">
+                            <div id="structure-score" class="text-lg font-bold text-purple-600">-</div>
+                            <div class="text-gray-600">Structure Score</div>
+                        </div>
+                        <div class="text-center">
+                            <div id="model-used" class="text-lg font-bold text-orange-600">-</div>
+                            <div class="text-gray-600">Model Used</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Generated Design -->
                 <div class="bg-gray-50 border rounded-lg p-6">
                     <div class="flex justify-between items-center mb-4">
                         <span class="text-sm text-gray-600">Generated for: <span id="result-tool" class="font-semibold"></span></span>
-                        <button id="copyBtn" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-200">
-                            📋 Copy Prompt
-                        </button>
+                        <div class="space-x-2">
+                            <button id="copyDesignBtn" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition duration-200">
+                                📋 Copy Design
+                            </button>
+                            <button id="copyPromptBtn" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-200">
+                                � Copy Prompt
+                            </button>
+                        </div>
                     </div>
-                    <pre id="generated-prompt" class="whitespace-pre-wrap text-sm bg-white p-4 rounded border max-h-96 overflow-y-auto"></pre>
+                    <div id="generated-design" class="whitespace-pre-wrap text-sm bg-white p-4 rounded border max-h-96 overflow-y-auto font-mono"></div>
+                </div>
+                
+                <!-- Prompt Used (Collapsible) -->
+                <div class="mt-4">
+                    <button id="togglePrompt" class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                        🔍 View Original Prompt Used
+                    </button>
+                    <div id="prompt-section" class="hidden mt-2 bg-gray-100 border rounded-lg p-4">
+                        <pre id="generated-prompt" class="whitespace-pre-wrap text-xs text-gray-700 max-h-64 overflow-y-auto"></pre>
+                    </div>
                 </div>
             </div>
         </div>
@@ -182,8 +222,33 @@
                 const data = await response.json();
                 
                 if (data.success) {
-                    document.getElementById('generated-prompt').textContent = data.prompt;
-                    document.getElementById('result-tool').textContent = data.app_details.selected_tool.replace('_', ' ');
+                    // Handle new response format with generated design
+                    if (data.generated_design) {
+                        // Display the generated UI/UX design
+                        document.getElementById('generated-design').textContent = data.generated_design;
+                        document.getElementById('generated-prompt').textContent = data.prompt_used || '';
+                        document.getElementById('result-tool').textContent = data.app_details.selected_tool.replace('_', ' ');
+                        
+                        // Show quality metrics if available
+                        if (data.quality_metrics) {
+                            const metrics = data.quality_metrics;
+                            document.getElementById('quality-score').textContent = (metrics.overall_quality_score * 100).toFixed(0) + '%';
+                            document.getElementById('page-count').textContent = metrics.estimated_pages;
+                            document.getElementById('structure-score').textContent = (metrics.structure_score * 100).toFixed(0) + '%';
+                            
+                            if (data.model_info) {
+                                document.getElementById('model-used').textContent = data.model_info.model_used || 'Gemini';
+                            }
+                            
+                            document.getElementById('quality-metrics').classList.remove('hidden');
+                        }
+                    } else {
+                        // Fallback to old format
+                        document.getElementById('generated-design').textContent = data.prompt || 'No design generated';
+                        document.getElementById('generated-prompt').textContent = data.prompt || '';
+                        document.getElementById('result-tool').textContent = data.app_details.selected_tool.replace('_', ' ');
+                    }
+                    
                     results.classList.remove('hidden');
                 } else {
                     alert('Error: ' + data.error);
@@ -193,16 +258,43 @@
             } finally {
                 // Reset button state
                 generateBtn.disabled = false;
-                generateBtn.textContent = '🎯 Generate UI/UX Prompt';
+                generateBtn.textContent = '🎯 Generate UI/UX Design';
                 loading.classList.add('hidden');
             }
         });
 
-        // Copy to clipboard
-        document.getElementById('copyBtn').addEventListener('click', () => {
+        // Toggle prompt visibility
+        document.getElementById('togglePrompt').addEventListener('click', () => {
+            const promptSection = document.getElementById('prompt-section');
+            const toggleBtn = document.getElementById('togglePrompt');
+            
+            if (promptSection.classList.contains('hidden')) {
+                promptSection.classList.remove('hidden');
+                toggleBtn.textContent = '🔼 Hide Original Prompt';
+            } else {
+                promptSection.classList.add('hidden');
+                toggleBtn.textContent = '🔍 View Original Prompt Used';
+            }
+        });
+
+        // Copy generated design to clipboard
+        document.getElementById('copyDesignBtn').addEventListener('click', () => {
+            const design = document.getElementById('generated-design').textContent;
+            navigator.clipboard.writeText(design).then(() => {
+                const btn = document.getElementById('copyDesignBtn');
+                const originalText = btn.textContent;
+                btn.textContent = '✅ Copied!';
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                }, 2000);
+            });
+        });
+
+        // Copy prompt to clipboard
+        document.getElementById('copyPromptBtn').addEventListener('click', () => {
             const prompt = document.getElementById('generated-prompt').textContent;
             navigator.clipboard.writeText(prompt).then(() => {
-                const btn = document.getElementById('copyBtn');
+                const btn = document.getElementById('copyPromptBtn');
                 const originalText = btn.textContent;
                 btn.textContent = '✅ Copied!';
                 setTimeout(() => {
