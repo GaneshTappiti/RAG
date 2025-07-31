@@ -45,6 +45,27 @@ constraints:
   - "Tailwind CSS for styling"
   - "Responsive design required"
   - "shadcn/ui for component library"
+
+development_stages:
+  - "planning"
+  - "architecture"
+  - "component_design"
+  - "implementation"
+  - "integration"
+  - "testing"
+  - "optimization"
+  - "deployment"
+
+supported_components:
+  - "ui_components"
+  - "forms"
+  - "navigation"
+  - "data_displays"
+  - "layouts"
+  - "authentication"
+  - "api_integration"
+  - "state_management"
+
 few_shot_examples:
   - input: "Start a task management app"
     output: |

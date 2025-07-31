@@ -28,6 +28,22 @@ optimization_tips:
   - "Use enhance prompt feature for complex requests"
   - "Target specific files to avoid unintended changes"
   - "Lock critical files that shouldn't be modified"
+
+development_stages:
+  - "planning"
+  - "prototyping"
+  - "implementation"
+  - "enhancement"
+  - "testing"
+  - "refinement"
+
+supported_components:
+  - "web_components"
+  - "javascript_modules"
+  - "css_styling"
+  - "html_structure"
+  - "api_connections"
+  - "user_interactions"
   - "Break complex features into incremental steps"
   - "Use Inspector mode for UI element changes"
   - "Reset context with summarization for long sessions"

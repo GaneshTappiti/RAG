@@ -1,3 +1,41 @@
+tool_name: Bubble
+format: visual_workflow
+tone: detailed_systematic
+framework: "No-code full-stack development with visual programming"
+preferred_use_cases:
+  - web_applications
+  - database_management
+  - workflow_automation
+  - api_integration
+  - user_authentication
+  - responsive_design
+
+prompting_strategies:
+  structured:
+    template: "Data Structure: {data_types}\nWorkflows: {workflows}\nUI Design: {ui_elements}\nIntegrations: {apis}"
+    use_cases: ["complex_applications", "database_heavy", "workflow_automation"]
+    effectiveness_score: 0.95
+  iterative:
+    template: "Phase {n}: Build {component} with {requirements} ensuring {constraints}"
+    use_cases: ["incremental_development", "feature_expansion"]
+    effectiveness_score: 0.85
+
+development_stages:
+  - "data_modeling"
+  - "ui_design"
+  - "workflow_creation"
+  - "api_integration"
+  - "testing"
+  - "deployment"
+
+supported_components:
+  - "data_types"
+  - "ui_elements"
+  - "workflows"
+  - "apis"
+  - "plugins"
+  - "privacy_rules"
+
 tool_profile:
   name: "Bubble"
   description: "No-code web application development platform with visual workflows"
