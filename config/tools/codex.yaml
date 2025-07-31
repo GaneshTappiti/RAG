@@ -1,0 +1,38 @@
+tool_name: Codex
+format: command_based
+tone: friendly_helpful
+framework: AI-assisted development
+preferred_use_cases:
+- code_generation
+- testing
+prompting_strategies:
+  tool_based:
+    template: Use {tool_name} to {action} for {objective}
+    use_cases:
+    - automated_tasks
+    - integrations
+    effectiveness_score: 0.85
+  context_aware:
+    template: 'Given context: {context}, implement {requirement} ensuring {constraints}'
+    use_cases:
+    - contextual_development
+    - adaptive_solutions
+    effectiveness_score: 0.8
+development_stages:
+- planning
+- implementation
+- testing
+- deployment
+supported_components:
+- code
+- documentation
+- tests
+capabilities: []
+constraints:
+- terminate your turn when you are sure that the problem is solved
+documentation_sources:
+- data/codex_docs/comprehensive_system_prompt.md
+extracted_metadata:
+  source: comprehensive_ai_tools_repository
+  files_processed: 1
+  has_tools_config: false

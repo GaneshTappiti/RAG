@@ -1,79 +1,65 @@
-name: "v0 by Vercel"
-description: "AI-powered React component generator with production-ready code"
-version: "1.0"
-category: "component_generator"
-
+tool_name: V0
+format: command_based
+tone: balanced_technical
+framework: Component-driven UI generation with Next.js
+preferred_use_cases:
+- web_development
+- mobile_development
+- code_generation
+- testing
+- api_integration
 prompting_strategies:
-  - type: "production_ready"
-    name: "No Placeholders Policy"
-    description: "Always generate complete, production-ready implementations"
-    template: |
-      Requirements: {user_requirements}
-      Tech Stack: Next.js 15, TypeScript, Tailwind CSS, shadcn/ui
-      
-      Implementation:
-      - Complete functional components
-      - No TODO comments or placeholders
-      - Production-ready code from start
-      - Proper error handling and loading states
-    confidence: 0.95
-
-  - type: "component_based"
-    name: "React Component Architecture"
-    description: "Focus on reusable, well-structured components"
-    template: |
-      Component Structure:
-      1. Import statements (shadcn/ui components)
-      2. TypeScript interfaces/types
-      3. Component implementation
-      4. Export statement
-      
-      Standards:
-      - Semantic HTML elements
-      - Proper ARIA attributes
-      - Responsive design (mobile-first)
-      - Accessibility compliance
-    confidence: 0.9
-
-  - type: "suggested_actions"
-    name: "Follow-up Action Suggestions"
-    description: "Provide 3-5 relevant next steps after completion"
-    template: |
-      After completing the task, suggest:
-      <Actions>
-        <Action name="{action_name}" description="{clear_description}" />
-        <Action name="{action_name}" description="{clear_description}" />
-        <Action name="{action_name}" description="{clear_description}" />
-      </Actions>
-      
-      Ranked by ease and relevance.
-    confidence: 0.8
-
-optimization_tips:
-  - "Use shadcn/ui components exclusively (import from @/components/ui)"
-  - "Implement responsive design with mobile-first approach"
-  - "Include proper TypeScript typing throughout"
-  - "Add loading states and error boundaries"
-  - "Use semantic HTML with ARIA support"
-  - "Create mermaid diagrams for complex flows"
-
+  step_by_step:
+    template: 'Step 1: {analysis} Step 2: {implementation} Step 3: {validation}'
+    use_cases:
+    - complex_tasks
+    - debugging
+    effectiveness_score: 0.9
+  tool_based:
+    template: Use {tool_name} to {action} for {objective}
+    use_cases:
+    - automated_tasks
+    - integrations
+    effectiveness_score: 0.85
+  context_aware:
+    template: 'Given context: {context}, implement {requirement} ensuring {constraints}'
+    use_cases:
+    - contextual_development
+    - adaptive_solutions
+    effectiveness_score: 0.8
+development_stages:
+- design
+- component_creation
+- styling
+- testing
+supported_components:
+- ui_components
+- layouts
+- styling
+- interactions
+capabilities:
+- assets and binaries via the special "```filetype file="path/to/file
+- instructions to move the header file and delete the sidebar file
+- execute them
+- customize this script further to suit your needs
+- a concise answer
+- assist with that
+- start
+- ticket at vercel
+- all languages like SQL and and React Native
+- URL(s) to websites
 constraints:
-  - "Never use placeholders or mock implementations"
-  - "Don't regenerate existing default files"
-  - "Assume shadcn/ui components are available"
-  - "Follow Next.js 15 best practices"
-  - "Use TypeScript strictly throughout"
-
-examples:
-  - input: "Create a user dashboard with analytics"
-    expected_approach: "Build complete dashboard with real charts, responsive layout, loading states, proper TypeScript interfaces, and shadcn/ui components"
-    
-  - input: "Build a contact form with validation"
-    expected_approach: "Implement full form with validation logic, error handling, submission states, accessibility features, and success feedback"
-
-enhancement_suggestions:
-  - "Integrate with AI SDK for chat/completion features"
-  - "Use Server Actions for form submissions"
-  - "Implement proper SEO with Next.js metadata"
-  - "Add animations with Framer Motion"
-  - "Consider Supabase integration for backend needs"
+- add new ones if a modification is needed
+- create one Code Project per response
+- be on used the server (e
+- use single dollar signs for inline math
+- uses the AI SDK via 'ai' and '@ai-sdk'
+- apologize or provide an explanation for the refusal
+- use QuickEdit when renaming files or projects
+- rewrite or delete existing SQL scripts that have already been executed
+documentation_sources:
+- data/v0_docs/comprehensive_system_prompt.md
+extracted_metadata:
+  source: comprehensive_ai_tools_repository
+  files_processed: 1
+  has_tools_config: false

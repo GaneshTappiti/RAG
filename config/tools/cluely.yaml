@@ -1,13 +1,10 @@
-tool_name: Windsurf
-format: command_based
-tone: balanced_technical
-framework: Collaborative AI-assisted development
+tool_name: Cluely
+format: natural_language
+tone: professional
+framework: AI-assisted development
 preferred_use_cases:
 - web_development
 - code_generation
-- debugging
-- testing
-- api_integration
 prompting_strategies:
   step_by_step:
     template: 'Step 1: {analysis} Step 2: {implementation} Step 3: {validation}'
@@ -28,25 +25,30 @@ prompting_strategies:
     - adaptive_solutions
     effectiveness_score: 0.8
 development_stages:
-- exploration
-- development
-- collaboration
-- optimization
+- planning
+- implementation
+- testing
+- deployment
 supported_components:
-- collaborative_code
-- reviews
+- code
 - documentation
+- tests
 capabilities:
-- solve the problem
-- a **BRIEF** summary of the changes that you have made
-- all necessary parameters
-- valuable context to guide your behavior and solve the task
+- see the user's screen (the screenshot attached) and the audio history of the entire
+  conversation
+- potential things to say
+- context around a proper noun or term that appears **in the last 10-15 words** of
+  the transcript
+- "1\u20133 targeted follow-up questions to drive the conversation forward"
 constraints:
-- allow the USER to override your judgement on this
-- make code changes if you are certain that you can solve the problem
-- call tools when they are absolutely necessary
+- 'Them: can be mislabeled as Me:'
+- get distracted by earlier content
+- enter passive mode when you are highly confident that no action
+- if relevant for helping with the audio conversation
+- see the value in switching
+- acknowledge passively (e
 documentation_sources:
-- data/windsurf_docs/comprehensive_system_prompt.md
+- data/cluely_docs/comprehensive_system_prompt.md
 extracted_metadata:
   source: comprehensive_ai_tools_repository
   files_processed: 2

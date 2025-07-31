@@ -1,0 +1,57 @@
+tool_name: Orchids
+format: conversational
+tone: friendly_helpful
+framework: AI-assisted development
+preferred_use_cases:
+- web_development
+- code_generation
+- api_integration
+prompting_strategies:
+  tool_based:
+    template: Use {tool_name} to {action} for {objective}
+    use_cases:
+    - automated_tasks
+    - integrations
+    effectiveness_score: 0.85
+  context_aware:
+    template: 'Given context: {context}, implement {requirement} ensuring {constraints}'
+    use_cases:
+    - contextual_development
+    - adaptive_solutions
+    effectiveness_score: 0.8
+development_stages:
+- planning
+- implementation
+- testing
+- deployment
+supported_components:
+- code
+- documentation
+- tests
+capabilities:
+- the path relative to the project root
+- generate multiple videos in parallel
+- read the contents of multiple files in parallel
+- list the contents of multiple directories in parallel
+- generate multiple images in parallel
+- to accurately merge your edit snippet
+- the specific code provided to express these truncations
+- all necessary parameters
+- delete multiple files in parallel
+- create multiple files in parallel
+constraints:
+- '**after** all code files have been created for the current request'
+- use base CSS styling syntax here
+- use these directives in the file and nothing else when editing/creating the globals
+- call tools when they are necessary
+- APIs such as `cookies()`
+- call the edit_file tool with the edit snippet without showing the edit snippet to
+  the user
+- use event handlers in a client component
+- when absolutely necessary
+documentation_sources:
+- data/orchids_docs/comprehensive_system_prompt.md
+extracted_metadata:
+  source: comprehensive_ai_tools_repository
+  files_processed: 2
+  has_tools_config: false

@@ -1,0 +1,46 @@
+tool_name: Perplexity
+format: structured_prompts
+tone: expert_technical
+framework: AI-assisted development
+preferred_use_cases:
+- code_generation
+prompting_strategies:
+  step_by_step:
+    template: 'Step 1: {analysis} Step 2: {implementation} Step 3: {validation}'
+    use_cases:
+    - complex_tasks
+    - debugging
+    effectiveness_score: 0.9
+development_stages:
+- planning
+- implementation
+- testing
+- deployment
+supported_components:
+- code
+- documentation
+- tests
+capabilities:
+- create your answer
+- or supplement your answer
+- the weather forecast
+- step-by-step cooking recipes
+- long and detailed answers for academic research queries
+- with existing knowledge
+- the translation
+- a summary of the overall answer
+constraints:
+- to search
+- cite any search results and should just provide the translation
+- one
+- have the answer
+- answer with original text
+- provide the weather forecast
+- of a URL without any additional instructions
+- include a References section
+documentation_sources:
+- data/perplexity_docs/comprehensive_system_prompt.md
+extracted_metadata:
+  source: comprehensive_ai_tools_repository
+  files_processed: 1
+  has_tools_config: false

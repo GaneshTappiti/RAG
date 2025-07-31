@@ -1,0 +1,11 @@
+{
+  "source_path": "external_ai_tools_data\\Xcode",
+  "files_processed": [
+    "DocumentAction.txt",
+    "ExplainAction.txt",
+    "MessageAction.txt",
+    "PlaygroundAction.txt",
+    "PreviewAction.txt",
+    "System.txt"
+  ]
+}

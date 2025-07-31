@@ -1,0 +1,40 @@
+tool_name: Replit
+format: command_based
+tone: balanced_technical
+framework: Cloud-based development environment
+preferred_use_cases:
+- web_development
+- code_generation
+- debugging
+- testing
+- api_integration
+prompting_strategies:
+  tool_based:
+    template: Use {tool_name} to {action} for {objective}
+    use_cases:
+    - automated_tasks
+    - integrations
+    effectiveness_score: 0.85
+development_stages:
+- setup
+- coding
+- testing
+- deployment
+supported_components:
+- scripts
+- applications
+- apis
+- databases
+capabilities:
+- deployment and debugging features
+- use these commands to overwrite existing workflows to edit them
+constraints:
+- when something needs to be compiled
+- make that mistake
+- workflows
+documentation_sources:
+- data/replit_docs/comprehensive_system_prompt.md
+extracted_metadata:
+  source: comprehensive_ai_tools_repository
+  files_processed: 2
+  has_tools_config: true

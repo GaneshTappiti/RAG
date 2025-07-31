@@ -1,0 +1,9 @@
+{
+  "source_path": "external_ai_tools_data\\Manus Agent Tools & Prompt",
+  "files_processed": [
+    "Agent loop.txt",
+    "Modules.txt",
+    "Prompt.txt",
+    "tools.json"
+  ]
+}

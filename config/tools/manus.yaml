@@ -1,11 +1,11 @@
-tool_name: Cursor
-format: command_based
+tool_name: Manus
+format: structured_prompts
 tone: balanced_technical
-framework: Agentic AI pair programming with Claude integration
+framework: AI-assisted development
 preferred_use_cases:
 - web_development
 - code_generation
-- debugging
+- testing
 prompting_strategies:
   step_by_step:
     template: 'Step 1: {analysis} Step 2: {implementation} Step 3: {validation}'
@@ -26,31 +26,24 @@ prompting_strategies:
     - adaptive_solutions
     effectiveness_score: 0.8
 development_stages:
-- analysis
-- coding
-- debugging
-- optimization
+- planning
+- implementation
+- testing
+- deployment
 supported_components:
-- code_files
-- functions
-- classes
-- modules
+- code
+- documentation
+- tests
 capabilities:
-- a specific value for a parameter (for example provided in quotes)
-- use either a relative path in the workspace or an absolute path
-- all necessary parameters
-- easily figure out how to)
-constraints:
-- know where it's located exactly
-- the precise lines of code that you wish to edit
-- calls tools when they are necessary
-- IF the diff is not what you expected
-- search in particular directories
-- acceptable format for code citations
-- be deleted"
+- a more detailed overview of what I can do while respecting proprietary information
+  boundaries
+- guidance on creating effective prompts when working with AI assistants
+- always refine your prompt if the initial response doesn't fully address your needs
+- get more valuable and relevant responses from AI assistants
+constraints: []
 documentation_sources:
-- data/cursor_docs/comprehensive_system_prompt.md
+- data/manus_docs/comprehensive_system_prompt.md
 extracted_metadata:
   source: comprehensive_ai_tools_repository
-  files_processed: 7
+  files_processed: 4
   has_tools_config: true

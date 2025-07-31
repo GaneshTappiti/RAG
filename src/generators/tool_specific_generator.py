@@ -120,14 +120,18 @@ class ToolSpecificPromptGenerator:
                     with open(doc_file, 'r', encoding='utf-8') as f:
                         content = f.read()
                     
+                    # Determine document type
+                    doc_type = self._determine_doc_type(doc_file.name)
+                    
                     # Create document with enhanced metadata
                     doc = Document(
                         page_content=content,
                         metadata={
                             'source': str(doc_file),
                             'tool': tool_name,
-                            'doc_type': doc_file.stem,
-                            'filename': doc_file.name
+                            'doc_type': doc_type,
+                            'filename': doc_file.name,
+                            'comprehensive_prompt': 'comprehensive_system_prompt' in doc_file.name
                         }
                     )
                     documents.append(doc)
@@ -136,6 +140,8 @@ class ToolSpecificPromptGenerator:
         
         if not documents:
             raise ValueError("No documents found for indexing")
+        
+        print(f"📚 Loading {len(documents)} documents from {len(list(data_dir.glob('*_docs')))} tools")
         
         # Split documents
         text_splitter = RecursiveCharacterTextSplitter(
@@ -153,7 +159,26 @@ class ToolSpecificPromptGenerator:
             persist_directory=self.chroma_path
         )
         
-        print(f"Created vector store with {len(split_docs)} document chunks")
+        print(f"✅ Created vector store with {len(split_docs)} document chunks")
+    
+    def _determine_doc_type(self, filename: str) -> str:
+        """Determine document type from filename"""
+        filename_lower = filename.lower()
+        
+        if 'comprehensive' in filename_lower:
+            return 'comprehensive_guide'
+        elif 'prompt' in filename_lower:
+            return 'system_prompt'
+        elif 'tool' in filename_lower:
+            return 'tool_config'
+        elif 'guide' in filename_lower:
+            return 'user_guide'
+        elif 'pattern' in filename_lower:
+            return 'design_patterns'
+        elif 'api' in filename_lower:
+            return 'api_docs'
+        else:
+            return 'documentation'
     
     def get_available_tools(self) -> List[str]:
         """Get list of available tools"""

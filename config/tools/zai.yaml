@@ -1,0 +1,48 @@
+tool_name: Zai
+format: command_based
+tone: friendly_helpful
+framework: AI-assisted development
+preferred_use_cases:
+- web_development
+- mobile_development
+- code_generation
+- testing
+- api_integration
+prompting_strategies:
+  tool_based:
+    template: Use {tool_name} to {action} for {objective}
+    use_cases:
+    - automated_tasks
+    - integrations
+    effectiveness_score: 0.85
+development_stages:
+- planning
+- implementation
+- testing
+- deployment
+supported_components:
+- code
+- documentation
+- tests
+capabilities:
+- use this tool to generate image for website favicon and logo
+- real-time communication
+- use it when you need
+- install new packages if you need
+- use read the `/home/z/my-project/dev
+- refer to the `examples/websocket/page
+- use websocket/socket
+- use this tool to generate website image
+- you to assist the user
+- use this tool to generate image for your project
+constraints:
+- read the most recent logs from dev
+- see 3000 port in auto dev server
+- specify preferences
+- see the / route defined in the src/app/page
+documentation_sources:
+- data/zai_docs/comprehensive_system_prompt.md
+extracted_metadata:
+  source: comprehensive_ai_tools_repository
+  files_processed: 1
+  has_tools_config: false

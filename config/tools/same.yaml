@@ -1,0 +1,65 @@
+tool_name: Same
+format: command_based
+tone: balanced_technical
+framework: AI-assisted development
+preferred_use_cases:
+- web_development
+- mobile_development
+- code_generation
+- debugging
+- testing
+- api_integration
+prompting_strategies:
+  step_by_step:
+    template: 'Step 1: {analysis} Step 2: {implementation} Step 3: {validation}'
+    use_cases:
+    - complex_tasks
+    - debugging
+    effectiveness_score: 0.9
+  tool_based:
+    template: Use {tool_name} to {action} for {objective}
+    use_cases:
+    - automated_tasks
+    - integrations
+    effectiveness_score: 0.85
+  context_aware:
+    template: 'Given context: {context}, implement {requirement} ensuring {constraints}'
+    use_cases:
+    - contextual_development
+    - adaptive_solutions
+    effectiveness_score: 0.8
+development_stages:
+- planning
+- implementation
+- testing
+- deployment
+supported_components:
+- code
+- documentation
+- tests
+capabilities:
+- the screenshot of the page after they login
+- create and edit a `
+- a specific value for a parameter (for example provided in quotes)
+- ask the USER to upload images to use in the project
+- work with runtime errors
+- use any "same-assets
+- solve the problem
+- break down the UI into "sections" and "pages" in your explanation
+- do it
+- also frequently ask the USER to provide feedback to your and remember their preferences
+constraints:
+- use the standard tool call format and the available tools
+- commands like `read_file`
+- run it at the moment
+- terminate your turn when you are sure that the problem is solved
+- acceptable format for code citations
+- create documentation files if explicitly requested by the User
+- ask unnecessary clarification or permissions from user for applying code changes
+- if the screenshot returns a beautiful project
+documentation_sources:
+- data/same_docs/comprehensive_system_prompt.md
+extracted_metadata:
+  source: comprehensive_ai_tools_repository
+  files_processed: 2
+  has_tools_config: true

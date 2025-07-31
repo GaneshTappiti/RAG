@@ -1,10 +1,11 @@
-tool_name: Cline
+tool_name: Roocode
 format: conversational
-tone: balanced_technical
+tone: expert_technical
 framework: AI-assisted development
 preferred_use_cases:
 - web_development
 - code_generation
+- debugging
 - testing
 - api_integration
 prompting_strategies:
@@ -38,25 +39,26 @@ supported_components:
 capabilities:
 - an overview of the project's file structure
 - additional tools and resources
-- helpful answers
 - use the list_files tool
 - multiple tools with different capabilities
 - open in a browser
+- efficiently read specific portions of large files without loading the entire file
+  into memory
 - the missing parameters using the ask_followup_question tool
+- multiple operations at once
 - use search_files to perform regex searches across files in a specified directory
 - insights into the codebase structure and important constructs
-- to the user
 constraints:
-- hesitate to use it when the situation truly calls for it
-- see the expected output
-- need to make small changes to an existing file
+- list the top-level contents
+- handle large files
+- '`cd` into a different directory to complete a task'
+- end your result with questions or offers for further assistance
 - be used until you've confirmed from the user that any previous tool uses were successful
-- \`cd\` into a different directory to complete a task
-- perform one browser action per message
-- specific portions of the file's content needs to be altered
-- allowed to ask the user questions using the ask_followup_question tool
+- the requested lines
+- when you need additional details to complete a task
+- edit files matching "\
 documentation_sources:
-- data/cline_docs/comprehensive_system_prompt.md
+- data/roocode_docs/comprehensive_system_prompt.md
 extracted_metadata:
   source: comprehensive_ai_tools_repository
   files_processed: 1

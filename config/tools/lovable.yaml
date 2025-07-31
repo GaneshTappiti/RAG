@@ -1,143 +1,68 @@
-tool_name: Lovable.dev
-format: structured_sections
-tone: expert_casual
-framework: "C.L.E.A.R (Concise, Logical, Explicit, Adaptive, Reflective)"
+tool_name: Lovable
+format: command_based
+tone: friendly_helpful
+framework: React/TypeScript web application development
 preferred_use_cases:
-  - project_kickoff
-  - ui_scaffolding
-  - responsiveness
-  - api_integrations
-  - debugging_and_refactoring
-  - component_optimization
-  - supabase_integration
-  - react_development
-
+- web_development
+- mobile_development
+- code_generation
+- debugging
+- testing
+- api_integration
 prompting_strategies:
-  structured:
-    template: "Context: {context}\nTask: {task}\nGuidelines: {guidelines}\nConstraints: {constraints}"
-    use_cases: ["complex_features", "new_projects", "app_skeleton"]
+  step_by_step:
+    template: 'Step 1: {analysis} Step 2: {implementation} Step 3: {validation}'
+    use_cases:
+    - complex_tasks
+    - debugging
     effectiveness_score: 0.9
-  conversational:
-    template: "Let's {action}. {description} {technical_details}"
-    use_cases: ["feature_additions", "debugging", "incremental_development"]
-    effectiveness_score: 0.8
-  meta:
-    template: "Review my prompt: '{original}' and suggest improvements for {target_aspects}"
-    use_cases: ["prompt_optimization", "learning"]
+  tool_based:
+    template: Use {tool_name} to {action} for {objective}
+    use_cases:
+    - automated_tasks
+    - integrations
     effectiveness_score: 0.85
-  reverse_meta:
-    template: "Summarize what we accomplished and create a reusable template"
-    use_cases: ["knowledge_capture", "documentation"]
+  context_aware:
+    template: 'Given context: {context}, implement {requirement} ensuring {constraints}'
+    use_cases:
+    - contextual_development
+    - adaptive_solutions
     effectiveness_score: 0.8
-
-optimization_tips:
-  - "Use Knowledge Base extensively with PRD and tech stack"
-  - "Implement incremental development approach"
-  - "Leverage Chat mode for planning and discussion"
-  - "Be explicit about constraints and requirements"
-  - "Use structured prompts for complex tasks"
-  - "Target specific files and components"
-  - "Include accessibility requirements from start"
-
-constraints:
-  - "React + TypeScript only (no other frameworks)"
-  - "Supabase for backend integration"
-  - "Tailwind CSS for styling"
-  - "Responsive design required"
-  - "shadcn/ui for component library"
-
 development_stages:
-  - "planning"
-  - "architecture"
-  - "component_design"
-  - "implementation"
-  - "integration"
-  - "testing"
-  - "optimization"
-  - "deployment"
-
+- planning
+- architecture
+- implementation
+- integration
+- testing
 supported_components:
-  - "ui_components"
-  - "forms"
-  - "navigation"
-  - "data_displays"
-  - "layouts"
-  - "authentication"
-  - "api_integration"
-  - "state_management"
-
-few_shot_examples:
-  - input: "Start a task management app"
-    output: |
-      Build a Next.js + Tailwind app with task CRUD, due dates, and a dashboard.
-      
-      Create a clean, modern interface with:
-      - Task creation form with title, description, due date
-      - Task list with filtering (completed/pending)
-      - Dashboard showing task statistics
-      - Responsive design for mobile and desktop
-      
-      Use shadcn/ui components for consistent styling and implement proper state management.
-  
-  - input: "Make the dashboard responsive"
-    output: |
-      Use responsive Tailwind classes: flex-col sm:flex-row, gap-4, etc.
-      
-      Apply responsive breakpoints:
-      - Mobile: Single column layout with stacked cards
-      - Tablet: Two-column grid for better space utilization
-      - Desktop: Three-column layout with sidebar navigation
-      
-      Ensure all interactive elements are touch-friendly on mobile devices.
-  
-  - input: "Add API integration for user authentication"
-    output: |
-      Implement secure authentication flow:
-      
-      - Set up NextAuth.js with Google/GitHub providers
-      - Create protected routes with middleware
-      - Add login/logout components with proper error handling
-      - Store user session data securely
-      
-      Include loading states and error boundaries for better UX.
-  
-  - input: "Debug React component rendering issues"
-    output: |
-      Identify and fix common React rendering problems:
-      
-      - Check for missing keys in list items
-      - Verify proper useEffect dependencies
-      - Look for infinite re-render loops
-      - Ensure state updates follow immutability patterns
-      
-      Add React.memo() for performance optimization where needed.
-
-prompting_guidelines:
-  structure:
-    - Start with clear context and project scope
-    - Define specific, actionable requirements
-    - Include UI/UX considerations
-    - Specify technology stack and constraints
-    - End with clear success criteria
-  
-  best_practices:
-    - Be specific about desired functionality
-    - Include responsive design requirements
-    - Mention accessibility considerations
-    - Specify error handling needs
-    - Include performance requirements
-  
-  avoid:
-    - Vague or ambiguous instructions
-    - Missing technical specifications
-    - Ignoring mobile considerations
-    - Overly complex single requests
-    - Undefined success metrics
-
-categories:
-  - prompting
-  - integration
-  - ui_design
-  - debugging
-  - performance
-  - accessibility
+- react_components
+- pages
+- apis
+- database_models
+capabilities:
+- draw inspiration from (unless they already mentioned a design they want to use)
+- clear
+- iterate on it
+- clone this repo and push changes
+- fix them
+- use to add a sidebar to your Lovable project
+- 'type ''{ name: string; Icon: LucideIcon; }[]'''
+- use them in your responses
+- clear explanations whether you're making changes or just chatting
+- custom domains (yet)
+constraints:
+- catch errors with try/catch blocks unless specifically requested by the user
+- if) you need to modify code
+- do too much
+- way you can modify package
+- use //
+- '**ONE** <lov-code> block to wrap **ALL** code changes and technical details in
+  your response'
+- reply to them and remember to follow the correct syntax
+- match the design you'll implement
+documentation_sources:
+- data/lovable_docs/comprehensive_system_prompt.md
+extracted_metadata:
+  source: comprehensive_ai_tools_repository
+  files_processed: 3
+  has_tools_config: true

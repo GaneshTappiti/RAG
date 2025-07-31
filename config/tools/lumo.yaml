@@ -1,11 +1,13 @@
-tool_name: Cursor
-format: command_based
+tool_name: Lumo
+format: natural_language
 tone: balanced_technical
-framework: Agentic AI pair programming with Claude integration
+framework: AI-assisted development
 preferred_use_cases:
 - web_development
+- mobile_development
 - code_generation
 - debugging
+- api_integration
 prompting_strategies:
   step_by_step:
     template: 'Step 1: {analysis} Step 2: {implementation} Step 3: {validation}'
@@ -26,31 +28,25 @@ prompting_strategies:
     - adaptive_solutions
     effectiveness_score: 0.8
 development_stages:
-- analysis
-- coding
-- debugging
-- optimization
+- planning
+- implementation
+- testing
+- deployment
 supported_components:
-- code_files
-- functions
-- classes
-- modules
+- code
+- documentation
+- tests
 capabilities:
-- a specific value for a parameter (for example provided in quotes)
-- use either a relative path in the workspace or an absolute path
-- all necessary parameters
-- easily figure out how to)
+- continue
+- you with the answer so you can continue
+- reply directly without calling a tool
+- ask the user to click on the "Web Search" toggle button
+- accurate
 constraints:
-- know where it's located exactly
-- the precise lines of code that you wish to edit
-- calls tools when they are necessary
-- IF the diff is not what you expected
-- search in particular directories
-- acceptable format for code citations
-- be deleted"
+- answer
 documentation_sources:
-- data/cursor_docs/comprehensive_system_prompt.md
+- data/lumo_docs/comprehensive_system_prompt.md
 extracted_metadata:
   source: comprehensive_ai_tools_repository
-  files_processed: 7
-  has_tools_config: true
+  files_processed: 1
+  has_tools_config: false

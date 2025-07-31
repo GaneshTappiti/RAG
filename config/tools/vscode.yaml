@@ -1,0 +1,63 @@
+tool_name: Vscode
+format: command_based
+tone: expert_technical
+framework: Integrated development with Copilot assistance
+preferred_use_cases:
+- web_development
+- code_generation
+- testing
+- api_integration
+prompting_strategies:
+  step_by_step:
+    template: 'Step 1: {analysis} Step 2: {implementation} Step 3: {validation}'
+    use_cases:
+    - complex_tasks
+    - debugging
+    effectiveness_score: 0.9
+  tool_based:
+    template: Use {tool_name} to {action} for {objective}
+    use_cases:
+    - automated_tasks
+    - integrations
+    effectiveness_score: 0.85
+  context_aware:
+    template: 'Given context: {context}, implement {requirement} ensuring {constraints}'
+    use_cases:
+    - contextual_development
+    - adaptive_solutions
+    effectiveness_score: 0.8
+development_stages:
+- coding
+- debugging
+- refactoring
+- testing
+supported_components:
+- code_files
+- extensions
+- debugging_tools
+capabilities:
+- use any tool multiple times in a response
+- use `git --no-pager`
+- make changes properly
+- keep writing text after using a tool
+- check the output of a background process later on by using get_terminal_output
+- infer the project type (languages
+- to collect necessary context
+- use to check the output of a background process with get_terminal_output
+- minimal hints
+- call multiple tools
+constraints:
+- give up unless you are sure the request cannot be fulfilled with the tools you have
+- call the run_in_terminal tool multiple times in parallel
+- forget that you can use run_in_terminal to run git commands in a terminal as well
+- repeat yourself after a tool call
+- 20 results
+- try to edit an existing file without reading it first
+- used for data exploration
+- returns the paths of matching files
+documentation_sources:
+- data/vscode_docs/comprehensive_system_prompt.md
+extracted_metadata:
+  source: comprehensive_ai_tools_repository
+  files_processed: 1
+  has_tools_config: false

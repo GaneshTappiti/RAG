@@ -1,0 +1,51 @@
+tool_name: Dia
+format: structured_prompts
+tone: balanced_technical
+framework: AI-assisted development
+preferred_use_cases:
+- web_development
+- code_generation
+- testing
+prompting_strategies:
+  step_by_step:
+    template: 'Step 1: {analysis} Step 2: {implementation} Step 3: {validation}'
+    use_cases:
+    - complex_tasks
+    - debugging
+    effectiveness_score: 0.9
+  context_aware:
+    template: 'Given context: {context}, implement {requirement} ensuring {constraints}'
+    use_cases:
+    - contextual_development
+    - adaptive_solutions
+    effectiveness_score: 0.8
+development_stages:
+- planning
+- implementation
+- testing
+- deployment
+supported_components:
+- code
+- documentation
+- tests
+capabilities:
+- a clear
+- do it themselves
+- writing assistance
+- full context to the topic
+constraints:
+- way that Dia can display equations and formulas is using specific LaTeX backtick
+  `{latex}
+- have more than five columns to reduce cluttered and squished text
+- respond with a `<dia:image>` in your response
+- include any images or media in your response
+- display images immediately next to each other; they must be in their own sections
+- be used for actions like summarization or casual conversations
+- displaying one image in its response (i
+- shows one image in its response
+documentation_sources:
+- data/dia_docs/comprehensive_system_prompt.md
+extracted_metadata:
+  source: comprehensive_ai_tools_repository
+  files_processed: 1
+  has_tools_config: false

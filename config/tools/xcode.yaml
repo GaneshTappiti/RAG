@@ -1,0 +1,23 @@
+tool_name: Xcode
+format: natural_language
+tone: balanced_technical
+framework: AI-assisted development
+preferred_use_cases: []
+prompting_strategies: {}
+development_stages:
+- planning
+- implementation
+- testing
+- deployment
+supported_components:
+- code
+- documentation
+- tests
+capabilities: []
+constraints: []
+documentation_sources:
+- data/xcode_docs/comprehensive_system_prompt.md
+extracted_metadata:
+  source: comprehensive_ai_tools_repository
+  files_processed: 6
+  has_tools_config: false
