@@ -13,4 +13,10 @@ openai>=1.31.1 # For embeddings (keeping for comparison)
 tiktoken>=0.7.0  # For embeddings
 numpy>=1.24.0 # For mathematical operations and similarity calculations
 
+# New dependencies for Lovable.dev prompt generator
+jinja2>=3.1.0 # Template engine for prompt generation
+pyyaml>=6.0 # YAML configuration file support
+streamlit>=1.28.0 # Web interface
+argparse # CLI support (built-in, but listed for clarity)
+
 # install markdown dependencies with: `pip install "unstructured[md]"` after install the requirements file. Leave this line commented out. 

@@ -1,0 +1,85 @@
+tool_name: Lovable.dev
+format: markdown
+tone: official yet casual
+preferred_use_cases:
+  - project kickoff
+  - UI scaffolding
+  - responsiveness
+  - API integrations
+  - debugging and refactoring
+  - component optimization
+few_shot_examples:
+  - input: "Start a task management app"
+    output: |
+      Build a Next.js + Tailwind app with task CRUD, due dates, and a dashboard.
+      
+      Create a clean, modern interface with:
+      - Task creation form with title, description, due date
+      - Task list with filtering (completed/pending)
+      - Dashboard showing task statistics
+      - Responsive design for mobile and desktop
+      
+      Use shadcn/ui components for consistent styling and implement proper state management.
+  
+  - input: "Make the dashboard responsive"
+    output: |
+      Use responsive Tailwind classes: flex-col sm:flex-row, gap-4, etc.
+      
+      Apply responsive breakpoints:
+      - Mobile: Single column layout with stacked cards
+      - Tablet: Two-column grid for better space utilization
+      - Desktop: Three-column layout with sidebar navigation
+      
+      Ensure all interactive elements are touch-friendly on mobile devices.
+  
+  - input: "Add API integration for user authentication"
+    output: |
+      Implement secure authentication flow:
+      
+      - Set up NextAuth.js with Google/GitHub providers
+      - Create protected routes with middleware
+      - Add login/logout components with proper error handling
+      - Store user session data securely
+      
+      Include loading states and error boundaries for better UX.
+  
+  - input: "Debug React component rendering issues"
+    output: |
+      Identify and fix common React rendering problems:
+      
+      - Check for missing keys in list items
+      - Verify proper useEffect dependencies
+      - Look for infinite re-render loops
+      - Ensure state updates follow immutability patterns
+      
+      Add React.memo() for performance optimization where needed.
+
+prompting_guidelines:
+  structure:
+    - Start with clear context and project scope
+    - Define specific, actionable requirements
+    - Include UI/UX considerations
+    - Specify technology stack and constraints
+    - End with clear success criteria
+  
+  best_practices:
+    - Be specific about desired functionality
+    - Include responsive design requirements
+    - Mention accessibility considerations
+    - Specify error handling needs
+    - Include performance requirements
+  
+  avoid:
+    - Vague or ambiguous instructions
+    - Missing technical specifications
+    - Ignoring mobile considerations
+    - Overly complex single requests
+    - Undefined success metrics
+
+categories:
+  - prompting
+  - integration
+  - ui_design
+  - debugging
+  - performance
+  - accessibility
