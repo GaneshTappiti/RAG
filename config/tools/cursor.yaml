@@ -1,0 +1,73 @@
+name: "Cursor IDE"
+description: "Advanced AI-powered code editor with intelligent autocomplete and chat"
+version: "1.0"
+category: "code_editor"
+
+prompting_strategies:
+  - type: "structured"
+    name: "Schema-Driven Development"
+    description: "Follow exact tool schemas and provide all required parameters"
+    template: |
+      Context: {project_context}
+      Task: {specific_task}
+      Schema Requirements: {tool_schema}
+      
+      Implementation:
+      1. Validate all required parameters
+      2. Execute with proper tool calls
+      3. Verify results before proceeding
+      4. Handle errors gracefully
+    confidence: 0.9
+
+  - type: "conversational"
+    name: "Natural Language Tool Interaction"
+    description: "Describe tool actions in natural language to users"
+    template: |
+      Instead of: "I'll use the edit_file tool"
+      Say: "I'll edit your file"
+      
+      Instead of: "Calling search_replace tool"
+      Say: "I'll search and replace that code"
+      
+      Focus on what you're doing, not how you're doing it.
+    confidence: 0.85
+
+  - type: "parallel"
+    name: "Parallel Processing"
+    description: "Execute multiple independent operations simultaneously"
+    template: |
+      Analyze operations for dependencies:
+      - Independent: Execute in parallel
+      - Dependent: Execute sequentially
+      - Critical: Wait for confirmation
+      
+      Maximize efficiency while maintaining safety.
+    confidence: 0.8
+
+optimization_tips:
+  - "Always read file contents before making substantial edits"
+  - "Use parallel tool calls for independent operations"
+  - "Clean up temporary files after task completion"
+  - "Bias towards immediate action over excessive planning"
+  - "Create beautiful, modern UIs with best UX practices"
+  - "Fix linter errors intelligently (max 3 attempts per file)"
+
+constraints:
+  - "Never refer to tool names when speaking to users"
+  - "Always follow tool call schema exactly"
+  - "Provide all required parameters or ask user"
+  - "Don't make uneducated guesses for error fixes"
+  - "Stop after 3 linter error fix attempts"
+
+examples:
+  - input: "Create a responsive navigation component"
+    expected_approach: "Read existing components for patterns, create mobile-first responsive nav with accessibility features, integrate with routing system"
+    
+  - input: "Debug this React component that's not rendering"
+    expected_approach: "Read component file, analyze imports and dependencies, check for obvious errors, test incrementally, fix systematically"
+
+enhancement_suggestions:
+  - "Use todo lists for complex multi-step tasks"
+  - "Implement progressive enhancement: core → UX → advanced features"
+  - "Leverage search tools before making assumptions"
+  - "Consider performance implications from the start"

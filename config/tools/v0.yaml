@@ -1,0 +1,79 @@
+name: "v0 by Vercel"
+description: "AI-powered React component generator with production-ready code"
+version: "1.0"
+category: "component_generator"
+
+prompting_strategies:
+  - type: "production_ready"
+    name: "No Placeholders Policy"
+    description: "Always generate complete, production-ready implementations"
+    template: |
+      Requirements: {user_requirements}
+      Tech Stack: Next.js 15, TypeScript, Tailwind CSS, shadcn/ui
+      
+      Implementation:
+      - Complete functional components
+      - No TODO comments or placeholders
+      - Production-ready code from start
+      - Proper error handling and loading states
+    confidence: 0.95
+
+  - type: "component_based"
+    name: "React Component Architecture"
+    description: "Focus on reusable, well-structured components"
+    template: |
+      Component Structure:
+      1. Import statements (shadcn/ui components)
+      2. TypeScript interfaces/types
+      3. Component implementation
+      4. Export statement
+      
+      Standards:
+      - Semantic HTML elements
+      - Proper ARIA attributes
+      - Responsive design (mobile-first)
+      - Accessibility compliance
+    confidence: 0.9
+
+  - type: "suggested_actions"
+    name: "Follow-up Action Suggestions"
+    description: "Provide 3-5 relevant next steps after completion"
+    template: |
+      After completing the task, suggest:
+      <Actions>
+        <Action name="{action_name}" description="{clear_description}" />
+        <Action name="{action_name}" description="{clear_description}" />
+        <Action name="{action_name}" description="{clear_description}" />
+      </Actions>
+      
+      Ranked by ease and relevance.
+    confidence: 0.8
+
+optimization_tips:
+  - "Use shadcn/ui components exclusively (import from @/components/ui)"
+  - "Implement responsive design with mobile-first approach"
+  - "Include proper TypeScript typing throughout"
+  - "Add loading states and error boundaries"
+  - "Use semantic HTML with ARIA support"
+  - "Create mermaid diagrams for complex flows"
+
+constraints:
+  - "Never use placeholders or mock implementations"
+  - "Don't regenerate existing default files"
+  - "Assume shadcn/ui components are available"
+  - "Follow Next.js 15 best practices"
+  - "Use TypeScript strictly throughout"
+
+examples:
+  - input: "Create a user dashboard with analytics"
+    expected_approach: "Build complete dashboard with real charts, responsive layout, loading states, proper TypeScript interfaces, and shadcn/ui components"
+    
+  - input: "Build a contact form with validation"
+    expected_approach: "Implement full form with validation logic, error handling, submission states, accessibility features, and success feedback"
+
+enhancement_suggestions:
+  - "Integrate with AI SDK for chat/completion features"
+  - "Use Server Actions for form submissions"
+  - "Implement proper SEO with Next.js metadata"
+  - "Add animations with Framer Motion"
+  - "Consider Supabase integration for backend needs"

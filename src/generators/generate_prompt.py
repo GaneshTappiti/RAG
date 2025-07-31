@@ -7,8 +7,14 @@ Usage: python generate_prompt.py --tool lovable --task "build login page" --proj
 import argparse
 import json
 import sys
+import os
 from pathlib import Path
-from build_prompt import LovablePromptGenerator, TaskContext, ProjectInfo
+
+# Add the project root to the Python path
+project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, project_root)
+
+from src.generators.build_prompt import LovablePromptGenerator, TaskContext, ProjectInfo
 
 def parse_arguments():
     """Parse command line arguments"""

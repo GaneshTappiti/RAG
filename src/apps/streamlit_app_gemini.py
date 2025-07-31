@@ -6,7 +6,7 @@ Description: Interactive web interface for generating optimized Lovable.dev prom
 import streamlit as st
 import os
 import yaml
-from shared_types import TaskContext, ProjectInfo
+from src.core.shared_types import TaskContext, ProjectInfo
 from typing import List, Dict, Any
 
 # Configure the page

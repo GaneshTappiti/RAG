@@ -1,0 +1,68 @@
+tool_profile:
+  name: "Framer"
+  description: "Interactive design and prototyping tool with React component integration"
+  strengths:
+    - "High-fidelity interactive prototypes"
+    - "Advanced animation and micro-interactions"  
+    - "Real code components integration"
+    - "Design system development"
+    - "Cross-platform responsive design"
+    - "API-connected prototypes"
+  prompt_guidelines:
+    - "Focus on interactive behavior and animation details"
+    - "Specify gesture and motion requirements clearly"
+    - "Define component states and transitions"
+    - "Consider cross-device responsive behavior"
+    - "Include code component specifications when needed"
+    - "Describe data integration requirements"
+
+documentation_sources:
+  - "data/framer_docs/design_prototyping_guide.md"
+  - "data/framer_docs/component_library_guide.md"
+
+few_shot_examples:
+  - stage: "APP_SKELETON"
+    example: |
+      Create an interactive Framer prototype for a fitness tracking app:
+      
+      App purpose: Help users track workouts and monitor fitness progress
+      
+      Core screens:
+      - Dashboard: Activity overview with animated progress rings
+      - Workout tracking: Start/stop timer with real-time stats
+      - Progress charts: Interactive data visualization
+      - Social feed: Activity sharing with engagement animations
+      
+      Key interactions:
+      - Swipe gestures for navigation between workout types
+      - Long-press to quick-start favorite workouts
+      - Pull-to-refresh for social feed updates
+      - Haptic feedback for workout milestones
+      
+      Animation requirements:
+      - Smooth progress ring animations
+      - Satisfying completion celebrations
+      - Fluid screen transitions
+      - Micro-interactions for button feedback
+
+  - stage: "PAGE_UI"
+    example: |
+      Design the workout tracking screen with advanced interactions:
+      
+      Layout components:
+      - Timer display: Large, readable format with animated seconds
+      - Exercise list: Swipeable cards with progress indicators
+      - Control buttons: Start, pause, skip with clear visual feedback
+      - Stats panel: Real-time metrics with smooth number animations
+      
+      Interactive behaviors:
+      - Swipe right on exercise cards to mark complete
+      - Swipe left to skip or modify exercise
+      - Tap and hold timer to access quick actions
+      - Shake gesture to mark workout complete
+      
+      Visual feedback:
+      - Button press animations with scale and color changes
+      - Progress bars with smooth transitions
+      - Completion checkmarks with celebration animations
+      - Background color shifts based on workout intensity

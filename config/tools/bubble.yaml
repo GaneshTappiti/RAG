@@ -1,0 +1,76 @@
+tool_profile:
+  name: "Bubble"
+  description: "No-code web application development platform with visual workflows"
+  strengths:
+    - "Full-stack web application development"
+    - "Visual database design and management"
+    - "Complex workflow automation"
+    - "API integration and external services"
+    - "User authentication and security"
+    - "Responsive web design without coding"
+  prompt_guidelines:
+    - "Define clear data relationships and privacy rules"
+    - "Specify user roles and permission requirements"
+    - "Detail workflow triggers and conditional logic"
+    - "Include API integration and automation needs"
+    - "Consider scalability and performance requirements"
+    - "Address security and compliance requirements"
+
+documentation_sources:
+  - "data/bubble_docs/web_app_development_guide.md"
+  - "data/bubble_docs/workflow_automation_guide.md"
+
+few_shot_examples:
+  - stage: "APP_SKELETON"
+    example: |
+      Build a comprehensive project management web application in Bubble:
+      
+      Application purpose: Team collaboration and project tracking platform
+      
+      User roles and permissions:
+      - Admin: Full system access, user management, billing
+      - Project Manager: Create projects, assign team members, view reports
+      - Team Member: View assigned tasks, update progress, comment
+      - Client: View project status, provide feedback, approve deliverables
+      
+      Core data types:
+      - Organization: Company information, subscription details
+      - User: Profile, role, organization membership
+      - Project: Title, timeline, team members, client assignment
+      - Task: Description, assignee, priority, status, time tracking
+      - Comment: User feedback, task discussions, project updates
+      
+      Main features:
+      - Dashboard with personalized task lists and project status
+      - Kanban board for visual task management
+      - Time tracking with automatic reporting
+      - File sharing and version control
+      - Real-time notifications and team communication
+      - Client portal for project visibility and approval workflows
+
+  - stage: "WORKFLOW_DESIGN"
+    example: |
+      Design the task assignment and notification workflow:
+      
+      Trigger: Project Manager assigns task to team member
+      
+      Workflow steps:
+      1. Validate task assignment (user permissions, capacity)
+      2. Create task record with all details and relationships
+      3. Send email notification to assigned team member
+      4. Add notification to in-app notification center
+      5. Update project progress calculations
+      6. If urgent priority: Send SMS notification
+      7. Create calendar event if task has specific deadline
+      8. Log activity in project timeline
+      
+      Conditional logic:
+      - If assignee is unavailable: Suggest alternative team members
+      - If project is client-facing: CC client on status updates
+      - If task dependencies exist: Check prerequisite completion
+      - If workload exceeds capacity: Trigger workload balancing alert
+      
+      Follow-up automations:
+      - Daily digest of pending tasks
+      - Overdue task escalation to project manager
+      - Completion celebration and next task suggestions

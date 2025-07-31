@@ -1,0 +1,75 @@
+tool_name: Adalo
+format: structured_design
+tone: user-centric and practical
+preferred_use_cases:
+  - mobile app development
+  - no-code app creation
+  - database-driven apps
+  - marketplace apps
+  - social apps
+few_shot_examples:
+  - input: "Build a marketplace app for local services"
+    output: |
+      Create a local services marketplace app with:
+      
+      Core features:
+      - User registration (customers and service providers)
+      - Service listing with photos and descriptions
+      - Booking system with calendar integration
+      - In-app messaging between users
+      - Rating and review system
+      - Payment processing
+      
+      Database structure:
+      - Users (customers, providers)
+      - Services (categories, pricing, availability)
+      - Bookings (scheduling, status tracking)
+      - Reviews (ratings, feedback)
+      
+      Focus on simple, intuitive mobile-first design.
+  
+  - input: "Create a social fitness app"
+    output: |
+      Build a social fitness tracking app featuring:
+      
+      Main components:
+      - User profiles with fitness goals and achievements
+      - Workout logging and tracking
+      - Social feed for sharing progress
+      - Friends system and challenges
+      - Progress charts and statistics
+      
+      Database design:
+      - Users (profiles, stats, preferences)
+      - Workouts (exercises, sets, reps, duration)
+      - Social posts (updates, photos, comments)
+      - Challenges (group activities, leaderboards)
+
+prompting_guidelines:
+  structure:
+    - Define app purpose and target users
+    - List core features and functionality
+    - Design database structure and relationships
+    - Specify user interface and navigation
+    - Include monetization and growth features
+  
+  best_practices:
+    - Think mobile-first for user experience
+    - Design clear database relationships
+    - Include user onboarding and engagement
+    - Plan for scalability and performance
+    - Consider app store guidelines
+  
+  avoid:
+    - Complex custom coding requirements
+    - Advanced integrations beyond Adalo's capabilities
+    - Desktop-first design approaches
+    - Overly complex data structures
+    - Features requiring extensive custom development
+
+categories:
+  - no_code
+  - mobile_apps
+  - database_design
+  - user_experience
+  - marketplace_apps

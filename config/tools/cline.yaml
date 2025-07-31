@@ -1,0 +1,78 @@
+name: "Cline"
+description: "Open-source AI coding assistant with step-by-step iterative approach"
+version: "1.0"
+category: "coding_assistant"
+
+prompting_strategies:
+  - type: "iterative"
+    name: "Step-by-Step Execution"
+    description: "Execute one tool at a time and wait for confirmation"
+    template: |
+      <thinking>
+      What information do I have? {current_context}
+      What information do I need? {missing_context}
+      Which tool is most appropriate? {tool_selection}
+      Are all required parameters available? {parameter_check}
+      </thinking>
+      
+      Execute single tool → Wait for result → Analyze → Next step
+    confidence: 0.95
+
+  - type: "analytical"
+    name: "Thinking-Driven Analysis"
+    description: "Use thinking tags before every tool call"
+    template: |
+      <thinking>
+      1. Analyze file structure for context
+      2. Determine most relevant tool for task
+      3. Check all required parameters
+      4. Infer missing values from context
+      5. If parameters missing: ask user, don't assume
+      </thinking>
+      
+      [Execute tool based on analysis]
+    confidence: 0.9
+
+  - type: "plan_mode"
+    name: "Planning vs Action Mode"
+    description: "Separate planning and execution phases"
+    template: |
+      PLAN MODE:
+      - Gather information and context
+      - Create detailed implementation plan
+      - Present plan for user approval
+      - Use mermaid diagrams for clarity
+      
+      ACT MODE:
+      - Execute the approved plan
+      - Use tools to implement solution
+      - Present final results
+    confidence: 0.85
+
+optimization_tips:
+  - "Always use <thinking> tags before tool calls"
+  - "Prefer dedicated tools over shell commands (list_files vs ls)"
+  - "Wait for user confirmation after each tool use"
+  - "Combine tools for comprehensive analysis"
+  - "Use search_files with carefully crafted regex patterns"
+  - "Create new projects in dedicated directories"
+
+constraints:
+  - "One tool per message maximum"
+  - "Wait for confirmation before proceeding"
+  - "Don't assume tool success without verification"
+  - "Ask for missing required parameters"
+  - "Don't fabricate optional parameter values"
+
+examples:
+  - input: "Find all TODO comments in the project"
+    expected_approach: "Use search_files with regex pattern for TODO, analyze results with context, then read_file for detailed examination"
+    
+  - input: "Create a new React project structure"
+    expected_approach: "Create dedicated project directory, use write_to_file for each component, follow React best practices, ensure easy startup"
+
+enhancement_suggestions:
+  - "Leverage MCP servers for extended capabilities"
+  - "Use replace_in_file for targeted edits vs write_to_file for rewrites"
+  - "Include mermaid diagrams in planning phase"
+  - "Build incrementally on previous steps"

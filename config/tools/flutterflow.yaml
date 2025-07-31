@@ -1,0 +1,87 @@
+tool_name: FlutterFlow
+format: visual_development
+tone: technical and Flutter-focused
+preferred_use_cases:
+  - cross-platform mobile apps
+  - Flutter app development
+  - rapid prototyping
+  - complex UI development
+  - enterprise mobile solutions
+few_shot_examples:
+  - input: "Build a Flutter e-commerce app"
+    output: |
+      Create a cross-platform e-commerce app using FlutterFlow:
+      
+      Screen structure:
+      - Splash screen with app branding
+      - Authentication (login/signup with Firebase)
+      - Home page with product categories and featured items
+      - Product listing with search and filters
+      - Product detail with image gallery and reviews
+      - Shopping cart with quantity management
+      - Checkout with payment integration (Stripe)
+      - User profile and order history
+      
+      Key Flutter widgets:
+      - PageView for product images
+      - ListView.builder for product lists
+      - StreamBuilder for real-time data
+      - Custom cards for product display
+      
+      Backend integration:
+      - Firebase Authentication
+      - Firestore for product data
+      - Cloud Functions for business logic
+      - Firebase Storage for images
+  
+  - input: "Create a task management app with team features"
+    output: |
+      Build a collaborative task management app:
+      
+      Architecture:
+      - Multi-page navigation with bottom tabs
+      - State management using Provider or Riverpod
+      - Real-time synchronization with Firebase
+      - Custom widgets for task cards and lists
+      
+      Core screens:
+      - Dashboard with task overview and statistics
+      - Project list with team collaboration
+      - Task detail with subtasks and comments
+      - Team management and user invitations
+      - Settings and notifications
+      
+      Advanced features:
+      - Drag-and-drop task reordering
+      - Push notifications for task updates
+      - Offline capability with local storage
+      - Custom animations and transitions
+
+prompting_guidelines:
+  structure:
+    - Define app architecture and navigation structure
+    - Specify Flutter widgets and custom components
+    - Design state management approach
+    - Include backend integration details
+    - Plan for deployment and distribution
+  
+  best_practices:
+    - Leverage FlutterFlow's visual development capabilities
+    - Use Firebase for backend services
+    - Design responsive layouts for multiple screen sizes
+    - Implement proper state management patterns
+    - Include error handling and loading states
+  
+  avoid:
+    - Complex custom code that requires extensive Dart programming
+    - Platform-specific features not supported by FlutterFlow
+    - Overly complex animations requiring custom implementations
+    - Third-party packages not available in FlutterFlow
+    - Desktop-specific design patterns
+
+categories:
+  - flutter_development
+  - cross_platform
+  - mobile_apps
+  - visual_development
+  - firebase_integration

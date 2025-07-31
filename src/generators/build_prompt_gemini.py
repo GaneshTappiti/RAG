@@ -8,7 +8,7 @@ import os
 import yaml
 import json
 from typing import Dict, List, Optional, Any
-from shared_types import TaskContext, ProjectInfo
+from src.core.shared_types import TaskContext, ProjectInfo
 from jinja2 import Template, Environment, FileSystemLoader
 from langchain_community.document_loaders import DirectoryLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter

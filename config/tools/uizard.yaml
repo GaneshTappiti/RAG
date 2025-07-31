@@ -1,0 +1,62 @@
+tool_name: Uizard
+format: structured_text
+tone: creative and design-focused
+preferred_use_cases:
+  - wireframe creation
+  - UI mockup generation
+  - design system creation
+  - prototype development
+  - design iteration
+few_shot_examples:
+  - input: "Create a mobile app wireframe for fitness tracking"
+    output: |
+      Design a clean fitness tracking mobile app wireframe:
+      
+      Main screens to include:
+      - Dashboard with activity summary and progress rings
+      - Workout library with exercise categories
+      - Progress tracking with charts and metrics
+      - Profile settings and goal management
+      
+      Use material design principles with card-based layouts and intuitive navigation.
+  
+  - input: "Design a dashboard for analytics platform"
+    output: |
+      Create a comprehensive analytics dashboard design:
+      
+      Layout structure:
+      - Top navigation bar with user profile and notifications
+      - Left sidebar with main navigation menu
+      - Central content area with widget grid
+      - Key metrics displayed as cards with icons
+      
+      Focus on data visualization and clear hierarchy.
+
+prompting_guidelines:
+  structure:
+    - Start with clear design goals and target platform
+    - Define screen structure and layout patterns
+    - Specify UI components and interactions
+    - Include visual design preferences
+    - End with user experience considerations
+  
+  best_practices:
+    - Focus on visual hierarchy and user flow
+    - Specify design system and component library
+    - Include responsive design considerations
+    - Mention accessibility and usability needs
+    - Provide clear wireframe structure
+  
+  avoid:
+    - Technical implementation details
+    - Backend or database specifications
+    - Complex interaction logic
+    - Platform-specific code requirements
+    - Overly detailed visual specifications
+
+categories:
+  - wireframing
+  - ui_design
+  - prototyping
+  - mockups
+  - design_systems

@@ -1,0 +1,70 @@
+name: "Windsurf"
+description: "AI-powered development environment with collaborative editing"
+version: "1.0"
+category: "development_environment"
+
+prompting_strategies:
+  - type: "explanatory"
+    name: "Explain Before Acting"
+    description: "Always explain why you're calling each tool"
+    template: |
+      Before each tool call:
+      "I need to {action} because {reason}"
+      
+      Examples:
+      - "Let me search for the function definition to understand its current implementation"
+      - "I'll examine the file structure to understand the project organization"
+      - "I need to read this configuration file to see the current settings"
+    confidence: 0.9
+
+  - type: "asynchronous_aware"
+    name: "Handle Asynchronous Operations"
+    description: "Account for tools that run asynchronously"
+    template: |
+      Asynchronous Tool Handling:
+      1. Call tool and explain the action
+      2. Stop making new tool calls if waiting for output
+      3. Wait for results before continuing
+      4. Adapt subsequent actions based on results
+      
+      Don't assume immediate output from all tools.
+    confidence: 0.85
+
+  - type: "contextual"
+    name: "Context-First Analysis"
+    description: "Analyze file structure and environment before acting"
+    template: |
+      Context Analysis:
+      1. Review provided file structure
+      2. Understand project organization
+      3. Identify relevant files and dependencies
+      4. Consider tool capabilities and limitations
+      5. Choose most appropriate tool for task
+    confidence: 0.8
+
+optimization_tips:
+  - "Explain reasoning before each tool call"
+  - "Stop making tool calls when waiting for async results"
+  - "Use natural language descriptions instead of tool names"
+  - "Follow exact tool schemas with all required parameters"
+  - "Analyze file structure before making changes"
+
+constraints:
+  - "Never call tools not explicitly provided"
+  - "Don't assume immediate output from all tools"
+  - "Provide clear explanations for each action"
+  - "Follow tool schemas exactly"
+  - "Use only available tools even if others were used previously"
+
+examples:
+  - input: "What does function foo do?"
+    expected_approach: "Explain: 'Let me find and examine the foo function' → Use grep_search → Explain: 'Now I'll look at the implementation' → Use view_code_item"
+    
+  - input: "Update the configuration file"
+    expected_approach: "Explain: 'I need to read the current configuration first' → Read file → Explain: 'Now I'll update with the new settings' → Edit file"
+
+enhancement_suggestions:
+  - "Provide clear reasoning for tool choices"
+  - "Handle async operations gracefully"
+  - "Build understanding incrementally"
+  - "Communicate progress clearly to users"

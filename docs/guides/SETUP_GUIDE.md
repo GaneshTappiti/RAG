@@ -75,7 +75,8 @@ Then open http://localhost:8501 for a beautiful web interface with:
 
 #### Python API
 ```python
-from build_prompt import LovablePromptGenerator, TaskContext, ProjectInfo
+# When running from project root
+from src.generators.build_prompt import LovablePromptGenerator, TaskContext, ProjectInfo
 
 generator = LovablePromptGenerator()
 # ... create your contexts
@@ -85,28 +86,32 @@ prompt = generator.generate_prompt(task_context, project_info)
 ## 🎯 What Makes This Special
 
 ### 1. **RAG-Powered Context Retrieval**
+
 - Automatically finds relevant documentation snippets
 - Semantic search across Lovable.dev best practices
 - Category-filtered retrieval (UI, API, debugging, etc.)
 
 ### 2. **Intelligent Prompt Structure**
+
 - Template-based generation using Jinja2
 - Consistent formatting and tone
 - Task-specific examples and guidelines
 
 ### 3. **Validation & Quality Assurance**
+
 - Automated prompt scoring (0-100)
 - Specific improvement suggestions
 - Completeness checking
 
 ### 4. **Multiple Interfaces**
+
 - **CLI**: Perfect for automation and scripts
 - **Web UI**: User-friendly visual interface
 - **Python API**: Integrate into your own tools
 
 ## 📁 Current Project Structure
 
-```
+```text
 RAG/
 ├── 🔧 Core System
 │   ├── build_prompt.py              # Main prompt generator with RAG
@@ -132,7 +137,7 @@ RAG/
     └── requirements.txt             # All dependencies
 ```
 
-## 🎉 Ready to Use!
+## 🎉 Ready to Use
 
 **Your system is already working!** The demo showed perfect 100/100 validation scores. With the OpenAI API key, you'll get:
 
@@ -153,12 +158,14 @@ With the complete system, a query like "build responsive dashboard" would automa
 ## 🛠️ Troubleshooting
 
 ### API Key Issues
+
 ```bash
 # Test your API key
 python -c "from openai import OpenAI; client = OpenAI(); print('API key works!')"
 ```
 
 ### Vector Database Issues
+
 ```bash
 # Recreate the database
 rm -rf chroma_lovable
@@ -166,6 +173,7 @@ python create_lovable_database.py
 ```
 
 ### Missing Dependencies
+
 ```bash
 pip install -r requirements.txt
 pip install "unstructured[md]"
