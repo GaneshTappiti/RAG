@@ -49,14 +49,13 @@ Write-Host "🌐 Starting server on http://127.0.0.1:5000" -ForegroundColor Cyan
 Write-Host "💡 Press Ctrl+C to stop the server" -ForegroundColor Yellow
 Write-Host ""
 
-# Run the server with error handling
+# Run the unified server
 try {
-    python run_dev_server.py --host 127.0.0.1 --port 5000
+    python scripts/server.py --mode dev --host 127.0.0.1 --port 5000
 } catch {
     Write-Host ""
-    Write-Host "❌ Server failed to start. Trying fallback..." -ForegroundColor Red
-    Write-Host ""
-    python app.py
+    Write-Host "❌ Server failed to start. Please check the error messages above." -ForegroundColor Red
+    Write-Host "💡 Try running: python scripts/setup.py" -ForegroundColor Yellow
 }
 
 Write-Host ""

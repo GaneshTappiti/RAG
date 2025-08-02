@@ -1,33 +1,209 @@
-# Enhanced Multi-Tool RAG Prompt Generator
+# RAG Prompt Generator
 
-A comprehensive system for generating optimized prompts for various AI development tools including Lovable.dev, Bolt.new, Cursor, v0, and many others.
+A Flask web application for generating optimized prompts for various AI development tools including Lovable.dev, Bolt.new, Cursor, v0, and many others using RAG (Retrieval-Augmented Generation) with Google Gemini embeddings.
 
-Created by **Ganesh Tappiti** and Enhanced RAG Team
+**Created by Ganesh Tappiti**
 
 ## 🚀 Quick Start
 
+### Option 1: Automated Setup
+```bash
+# Run setup script to install dependencies
+python scripts/setup.py
+
+# Start development server
+python scripts/server.py --mode dev
+```
+
+### Option 2: Manual Setup
 ```bash
 # Install dependencies
 pip install -r requirements.txt
 
-# Run the enhanced Streamlit app
-streamlit run src/apps/streamlit_app.py
+# Copy environment template
+copy .env.example .env
+# Edit .env and add your Google API key
 
-# Or run the Gemini version
-streamlit run src/apps/streamlit_app_gemini.py
+# Start development server
+python scripts/server.py --mode dev
+
+# Or use batch/PowerShell scripts
+start_server.bat           # Windows Batch
+start_server.ps1          # PowerShell
+```
+
+### Option 3: Production Mode
+```bash
+# Start production server
+python scripts/server.py --mode prod --host 0.0.0.0 --port 8000
 ```
 
 ## 📁 Project Structure
 
 ```
-├── src/                          # Source code
-│   ├── core/                     # Core type definitions and utilities
-│   │   ├── types.py             # Enhanced type definitions
-│   │   └── shared_types.py      # Legacy shared types
-│   ├── generators/              # Prompt generation engines
-│   │   ├── enhanced_generator.py # Main enhanced generator
-│   │   ├── basic_generator.py   # Legacy basic generator
-│   │   ├── build_prompt.py      # Prompt building utilities
+rag-app/
+├── app.py                 # Main Flask application
+├── requirements.txt       # Python dependencies
+├── azure.yaml            # Azure deployment configuration
+├── README.md             # This file
+├── .env.example          # Environment variables template
+├── .gitignore           # Git ignore patterns
+│
+├── src/                  # Source code
+│   ├── core/            # Core type definitions and utilities
+│   │   ├── types.py     # Enhanced type definitions
+│   │   └── shared_types.py  # Legacy shared types
+│   ├── generators/      # Prompt generation engines
+│   │   ├── enhanced_generator.py  # Main enhanced generator
+│   │   ├── basic_generator.py     # Legacy basic generator
+│   │   ├── build_prompt.py       # Prompt building utilities
+│   │   └── llm_generator.py      # LLM integration
+│   └── utils/           # Utility functions
+│
+├── static/              # Static web assets (CSS, JS, images)
+├── templates/           # HTML templates
+├── data/               # Documentation and data indices
+├── storage/            # Database storage (ChromaDB)
+├── chroma_*/           # ChromaDB instances
+│
+├── scripts/            # Utility scripts
+│   ├── server.py       # Unified server launcher
+│   └── setup.py        # Setup and installation script
+│
+└── tests/              # Test suite
+    ├── __init__.py
+    └── test_app.py     # Main test file
+```
+
+## 🔧 Configuration
+
+### Environment Variables
+
+Create a `.env` file from `.env.example`:
+
+```bash
+# Required: Google Gemini API Key
+GOOGLE_API_KEY=your_gemini_api_key_here
+
+# Optional: Flask settings
+FLASK_ENV=development
+FLASK_DEBUG=1
+SECRET_KEY=your_secret_key_here
+```
+
+### Dependencies
+
+The application requires Python 3.8+ and the following packages:
+- Flask (web framework)
+- ChromaDB (vector database)
+- LangChain + Google Gemini (AI/embeddings)
+- Additional dependencies in `requirements.txt`
+
+## 🌐 Usage
+
+1. **Access the web interface**: http://127.0.0.1:5000
+2. **Select an AI tool** from the supported tools list
+3. **Enter your project details** and requirements
+4. **Generate optimized prompts** for your selected tool
+5. **Copy and use** the generated prompts in your AI tool
+
+### Supported AI Tools
+- Lovable.dev, Bolt.new, Cursor, v0
+- Replit, CodeSandbox, StackBlitz
+- And many more...
+
+## 🧪 Testing
+
+```bash
+# Run tests
+python tests/test_app.py
+
+# Test specific functionality
+python -m pytest tests/
+```
+
+## 🐳 Docker Support
+
+```dockerfile
+FROM python:3.11-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+COPY . .
+EXPOSE 5000
+CMD ["python", "scripts/server.py", "--mode", "prod"]
+```
+
+## 🔧 Development
+
+### Server Options
+```bash
+# Development mode (auto-reload, debug)
+python scripts/server.py --mode dev
+
+# Production mode
+python scripts/server.py --mode prod
+
+# Custom host/port
+python scripts/server.py --host 0.0.0.0 --port 8080
+
+# Install dependencies
+python scripts/server.py --install-deps
+```
+
+### Project Management
+- Use `scripts/setup.py` for initial setup
+- Use `scripts/server.py` for all server operations
+- Keep source code in `src/` directory
+- Store tests in `tests/` directory
+
+## 📝 API Documentation
+
+The Flask application provides a web interface with the following main routes:
+- `/` - Main application interface
+- `/generate` - Prompt generation endpoint
+- `/tools` - Supported tools information
+
+## 🚀 Deployment
+
+### Azure Deployment
+The project includes `azure.yaml` for Azure deployment:
+```bash
+az webapp up --name your-app-name
+```
+
+### Manual Deployment
+1. Install dependencies: `pip install -r requirements.txt`
+2. Set environment variables
+3. Run: `python scripts/server.py --mode prod`
+
+## 🛠️ Troubleshooting
+
+### Common Issues
+1. **Import Errors**: Run `python scripts/setup.py` to install dependencies
+2. **Port Conflicts**: Use `--port` flag to specify different port
+3. **Windows Socket Errors**: Use the provided batch/PowerShell scripts
+
+### Getting Help
+- Check the test suite: `python tests/test_app.py`
+- Review logs for error details
+- Ensure all dependencies are installed
+
+## 📄 License
+
+This project is created by Ganesh Tappiti. Please check with the author for licensing terms.
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run tests: `python tests/test_app.py`
+5. Submit a pull request
+
+---
+
+For more detailed information, check the source code documentation in the `src/` directory.
 │   │   └── generate_prompt*.py  # Generation modules
 │   ├── database/                # Database and embedding operations
 │   │   ├── create_database*.py  # Database creation modules

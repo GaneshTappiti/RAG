@@ -40,14 +40,13 @@ echo 🌐 Starting server on http://127.0.0.1:5000
 echo 💡 Press Ctrl+C to stop the server
 echo.
 
-REM Run the server with error handling
-python run_dev_server.py --host 127.0.0.1 --port 5000
+REM Run the unified server
+python scripts\server.py --mode dev --host 127.0.0.1 --port 5000
 
 if errorlevel 1 (
     echo.
-    echo ❌ Server failed to start. Trying fallback...
-    echo.
-    python app.py
+    echo ❌ Server failed to start. Please check the error messages above.
+    echo 💡 Try running: python scripts\setup.py --install-deps
 )
 
 echo.

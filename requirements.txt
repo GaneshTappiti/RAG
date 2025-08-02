@@ -4,15 +4,12 @@ waitress>=2.1.0 # Production WSGI server
 langchain>=0.2.2
 langchain-community>=0.2.3
 langchain-google-genai>=1.0.0 # For Google Gemini integration
-langchain-openai>=0.1.8 # For embeddings (keeping for comparison)
 unstructured>=0.11.8 # Document loading (compatible with Python 3.13)
 # onnxruntime==1.17.1 # chromadb dependency: on Mac use `conda install onnxruntime -c conda-forge`
 # For Windows users, install Microsoft Visual C++ Build Tools first
 # install onnxruntime before installing `chromadb`
-chromadb>=0.5.0 # Vector storage
+chromadb>=0.5.0 # Vector storage with embedding support
 google-generativeai>=0.3.0 # Google Gemini API
-openai>=1.31.1 # For embeddings (keeping for comparison)
-tiktoken>=0.7.0  # For embeddings
 numpy>=1.24.0 # For mathematical operations and similarity calculations
 
 # New dependencies for Lovable.dev prompt generator
